@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Coffee and Crisps Cafe | Saroornagar, Hyderabad</title>
 <meta name="description" content="Coffee and Crisps Cafe in Saroornagar, Hyderabad — a warm, roasted coffee spot for fresh brews, crispy bites and unhurried evenings. 4.5★ rated, open 11 AM – 10:45 PM daily.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%23D9822B' d='M20 4 C10 4 4 13 4 24 C4 34 13 36 20 36 C27 36 36 34 36 24 C36 13 30 4 20 4 Z M20 8 C23 15 15 22 21 30 C24 33 20 36 20 36 C20 36 16 31 19 24 C22 17 18 11 20 8 Z'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%232A160E' stroke-width='4'%3E%3Cpath d='M 12 12 L 64 12 C 78 12, 88 22, 88 36 L 88 88 L 36 88 C 22 88, 12 78, 12 64 Z' stroke-width='5'/%3E%3Cline x1='12' y1='50' x2='88' y2='50'/%3E%3Cline x1='50' y1='12' x2='50' y2='88'/%3E%3Cpath d='M 20 42 L 31 22 L 42 42 Z'/%3E%3Cpath d='M 50 42 Q 59 34 61 24 Q 52 26 50 42 Z'/%3E%3Cpath d='M 50 42 Q 41 34 39 24 Q 48 26 50 42 Z'/%3E%3Cpath d='M 18 80 A 24 24 0 0 1 44 80'/%3E%3Cpath d='M 58 60 H 78 V 69 C 78 75 73 79 68 79 C 63 79 58 75 58 69 Z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,560;0,9..144,650;1,9..144,440;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -92,7 +92,26 @@ button{ font-family: inherit; }
 
 .divider{ display:flex; align-items:center; justify-content:center; gap: var(--space-2); margin: 0 auto; width: 100%; max-width: 220px; }
 .divider::before,.divider::after{ content:''; height:1px; flex:1; background: var(--amber-light); opacity: 0.4; }
-.divider svg{ width:18px; height:18px; flex-shrink:0; color: var(--amber); }
+.divider svg{ width:26px; height:26px; flex-shrink:0; color: var(--espresso); }
+
+/* ============================= LOGO & TYPOGRAPHY STYLES ============================= */
+.cafe-grid-logo{
+  width: 36px; height: 36px; color: var(--espresso); flex-shrink: 0;
+  transition: transform .35s var(--ease);
+}
+.nav-logo:hover .cafe-grid-logo{ transform: scale(1.05) rotate(-2deg); }
+
+/* Inline Coffee Bean replacing "o" in Coffee */
+.bean-o{
+  display: inline-block;
+  height: 0.76em;
+  width: auto;
+  vertical-align: -0.02em;
+  margin: 0 -0.03em;
+  transform: rotate(-16deg);
+  color: var(--espresso);
+  fill: currentColor;
+}
 
 /* buttons */
 .btn{
@@ -122,7 +141,7 @@ button{ font-family: inherit; }
   animation-name: bean-fall; animation-timing-function: linear; animation-fill-mode: forwards;
   opacity:.85;
 }
-.petal svg{ width:100%; height:100%; display:block; filter: drop-shadow(0 2px 5px rgba(42,22,14,0.15)); }
+.petal svg{ width:100%; height:100%; display:block; filter: drop-shadow(0 3px 6px rgba(42,22,14,0.25)); }
 @keyframes bean-fall{
   0%   { transform: translate(0,0) rotate(0deg); opacity:0; }
   6%   { opacity:.85; }
@@ -130,20 +149,20 @@ button{ font-family: inherit; }
   100% { transform: translate(var(--drift,40px), 118vh) rotate(var(--spin,340deg)); opacity:0; }
 }
 
-/* ============================= CURSOR (COFFEE BEAN) ============================= */
+/* ============================= COFFEE BEAN CURSOR ============================= */
 .flower-cursor{
   position:fixed; top:0; left:0; width:28px; height:28px; pointer-events:none; z-index: 9999;
   transform: translate3d(-50px,-50px,0) scale(.6) rotate(0deg);
   opacity:0; transition: opacity .3s ease;
 }
-.flower-cursor svg{ width:100%; height:100%; filter: drop-shadow(0 4px 8px rgba(42,22,14,.35)); }
+.flower-cursor svg{ width:100%; height:100%; filter: drop-shadow(0 4px 8px rgba(42,22,14,.4)); }
 body.has-flower-cursor{ cursor:none; }
 body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
 .petal-spark{
   position:fixed; top:0; left:0; width:12px; height:12px; pointer-events:none; z-index:9998;
   animation: spark-fade .75s var(--ease) forwards;
 }
-.petal-spark svg{ width:100%; height:100%; }
+.petal-spark svg{ width:100%; height:100%; filter: drop-shadow(0 2px 4px rgba(42,22,14,0.3)); }
 @keyframes spark-fade{
   0%{ opacity:.85; transform: translate(-50%,-50%) scale(1) rotate(0deg); }
   100%{ opacity:0; transform: translate(-50%,-50%) scale(.3) rotate(70deg) translateY(14px); }
@@ -154,15 +173,14 @@ body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
   position: sticky; top:0; z-index: 500;
   display:flex; align-items:center; justify-content:space-between;
   padding: 1.1rem var(--space-3);
-  background: rgba(250,243,235,0.82);
+  background: rgba(250,243,235,0.85);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid transparent;
   transition: border-color .4s ease, box-shadow .4s ease, padding .4s ease;
 }
 .nav.scrolled{ border-color: rgba(42,22,14,.08); box-shadow: 0 12px 30px -24px rgba(42,22,14,.4); padding: 0.75rem var(--space-3); }
-.nav-logo{ font-family: var(--font-display); font-weight:650; font-size:1.25rem; color: var(--espresso); display:flex; align-items:center; gap:0.5em; }
-.nav-logo svg{ width:24px; height:24px; color: var(--amber); }
+.nav-logo{ font-family: var(--font-display); font-weight:650; font-size:1.25rem; color: var(--espresso); display:flex; align-items:center; gap:0.6em; }
 .nav-logo em{ color: var(--amber-deep); font-style: italic; }
 .nav-links{ display:flex; align-items:center; gap: var(--space-4); }
 .nav-links a{ font-size:0.92rem; font-weight:600; color: var(--espresso-70); position:relative; padding: 0.2em 0; }
@@ -337,8 +355,9 @@ body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
 /* ============================= FOOTER ============================= */
 footer{ background: var(--espresso); color: rgba(250,243,235,.75); padding: var(--space-6) 0 var(--space-3); }
 .footer-grid{ display:grid; grid-template-columns: 1.3fr 1fr 1fr; gap: var(--space-5); padding-bottom: var(--space-5); border-bottom: 1px solid rgba(250,243,235,.12); }
-.footer-brand{ font-family: var(--font-display); font-size:1.5rem; color: var(--cream); display:flex; align-items:center; gap:0.5em; }
-.footer-brand svg{ width:24px; height:24px; color: var(--amber-light); }
+.footer-brand{ font-family: var(--font-display); font-size:1.5rem; color: var(--cream); display:flex; align-items:center; gap:0.6em; }
+.footer-brand .cafe-grid-logo{ color: var(--amber-light); width: 38px; height: 38px; }
+.footer-brand .bean-o{ color: var(--cream); }
 .footer-brand em{ color: var(--amber-light); font-style:italic; }
 .footer-tag{ margin-top: var(--space-2); font-size:0.92rem; max-width:280px; line-height:1.6; }
 footer h5{ color: var(--cream); font-size:0.82rem; letter-spacing:.1em; text-transform:uppercase; margin-bottom: var(--space-2); font-weight:700; }
@@ -375,7 +394,7 @@ footer a:hover{ color: var(--amber-light); }
 }
 .chat-panel.open{ transform: translateY(0) scale(1); opacity:1; pointer-events:auto; }
 .chat-head{ background: linear-gradient(120deg, var(--amber-deep), var(--amber)); color: var(--paper); padding: 1.1rem 1.2rem; display:flex; align-items:center; gap:0.7em; }
-.chat-head svg{ width:22px; height:22px; }
+.chat-head .cafe-grid-logo{ width:28px; height:28px; color: var(--paper); }
 .chat-head b{ display:block; font-family: var(--font-display); font-size:1.02rem; font-weight:600; }
 .chat-head span{ display:block; font-size:0.72rem; opacity:.85; }
 .chat-body{ flex:1; overflow-y:auto; padding: 1rem 1rem 0.5rem; display:flex; flex-direction:column; gap:0.65rem; }
@@ -410,16 +429,35 @@ footer a:hover{ color: var(--amber-light); }
 
 <a href="#home" class="skip-link">Skip to content</a>
 
-<!-- ambient coffee beans & golden crisp shower, purely decorative -->
+<!-- ambient coffee bean shower, purely decorative -->
 <div id="petalLayer" aria-hidden="true"></div>
+
+<!-- Coffee Bean Cursor -->
 <div class="flower-cursor" id="flowerCursor" aria-hidden="true">
-  <svg viewBox="0 0 40 40" fill="none"><path fill="var(--amber)" d="M20 4C10.5 4 4 12.5 4 23.5C4 33.5 12.5 36 20 36C27.5 36 36 33.5 36 23.5C36 12.5 29.5 4 20 4ZM20 8.5C23.2 15.5 15.5 22.5 21.5 30.5C23.8 33 20 35.5 20 35.5C20 35.5 16.2 30.5 19.2 23.5C22.2 16.5 17.8 11.5 20 8.5Z"/></svg>
+  <svg viewBox="0 0 32 40" fill="none"><path fill="#2A160E" d="M 16 2 C 8.5 2 3 9.5 3 20 C 3 30.5 8.5 38 16 38 C 23.5 38 29 30.5 29 20 C 29 9.5 24 2 16 2 Z M 16 7 C 19.5 13.5 12 19.5 17.5 27.5 C 19.5 30.5 16.5 32.5 16 32.5 C 15 32.5 11 27.5 13.2 21 C 15.4 14 11.8 9 16 7 Z"/></svg>
 </div>
 
 <nav class="nav" id="siteNav">
   <a class="nav-logo" href="#home">
-    <svg viewBox="0 0 40 40" fill="none"><path fill="currentColor" d="M20 4C10.5 4 4 12.5 4 23.5C4 33.5 12.5 36 20 36C27.5 36 36 33.5 36 23.5C36 12.5 29.5 4 20 4ZM20 8.5C23.2 15.5 15.5 22.5 21.5 30.5C23.8 33 20 35.5 20 35.5C20 35.5 16.2 30.5 19.2 23.5C22.2 16.5 17.8 11.5 20 8.5Z"/></svg>
-    Coffee <em>&amp;</em> Crisps
+    <svg class="cafe-grid-logo" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3.5">
+      <path d="M 12 12 L 64 12 C 78 12, 88 22, 88 36 L 88 88 L 36 88 C 22 88, 12 78, 12 64 Z" stroke-width="4" stroke-linejoin="round" />
+      <line x1="12" y1="50" x2="88" y2="50" stroke-width="3" />
+      <line x1="50" y1="12" x2="50" y2="88" stroke-width="3" />
+      <path d="M 20 42 L 31 22 L 42 42 Z" stroke-width="3.5" stroke-linejoin="round" />
+      <circle cx="31" cy="30" r="2.5" fill="currentColor" stroke="none" />
+      <rect x="28.5" y="36" width="5" height="6" stroke-width="2.5" />
+      <path d="M 50 42 Q 59 34 61 24 Q 52 26 50 42 Z" stroke-width="3" fill="none" />
+      <path d="M 50 42 Q 41 34 39 24 Q 48 26 50 42 Z" stroke-width="3" fill="none" />
+      <path d="M 68 22 Q 78 26 74 34 Q 70 42 82 44" stroke-width="2.5" stroke-linecap="round" fill="none" />
+      <path d="M 72 16 A 14 14 0 0 1 84 28" stroke-width="2.5" stroke-linecap="round" fill="none" />
+      <path d="M 18 80 A 24 24 0 0 1 44 80" stroke-width="3" stroke-linecap="round" />
+      <path d="M 24 80 A 18 18 0 0 1 38 80" stroke-width="3" stroke-linecap="round" />
+      <path d="M 30 80 A 12 12 0 0 1 32 80" stroke-width="3" stroke-linecap="round" />
+      <path d="M 58 60 H 78 V 69 C 78 75 73 79 68 79 C 63 79 58 75 58 69 Z" stroke-width="3.5" stroke-linejoin="round" />
+      <path d="M 78 63 H 82 C 84.5 63 86 64.5 86 67 C 86 69.5 84.5 71 82 71 H 78" stroke-width="3" />
+      <line x1="62" y1="83" x2="74" y2="83" stroke-width="3" stroke-linecap="round" />
+    </svg>
+    <span>C<svg class="bean-o" viewBox="0 0 24 32"><path fill="currentColor" d="M12 2C5.5 2 2 8 2 16C2 24 5.5 30 12 30C18.5 30 22 24 22 16C22 8 18.5 2 12 2ZM12 6C15.2 11.2 9.2 16.2 14.2 22.2C16.2 24.2 13 26 12 26C11 26 7.8 22 9.8 17C11.8 12 8.8 8 12 6Z"/></svg>ffee <em>&amp;</em> Crisps</span>
   </a>
   <div class="nav-links">
     <a href="#about">About</a>
@@ -449,7 +487,7 @@ footer a:hover{ color: var(--amber-light); }
   <div class="hero-blooms" id="heroBlooms"></div>
   <div class="hero-inner">
     <p class="eyebrow">Saroornagar &middot; Hyderabad</p>
-    <h1>Coffee <span>&amp;</span> Crisps <em>Cafe</em></h1>
+    <h1>C<svg class="bean-o" viewBox="0 0 24 32" style="font-size:1em; margin:0 -0.01em;"><path fill="currentColor" d="M12 2C5.5 2 2 8 2 16C2 24 5.5 30 12 30C18.5 30 22 24 22 16C22 8 18.5 2 12 2ZM12 6C15.2 11.2 9.2 16.2 14.2 22.2C16.2 24.2 13 26 12 26C11 26 7.8 22 9.8 17C11.8 12 8.8 8 12 6Z"/></svg>ffee <span>&amp;</span> Crisps <em>Cafe</em></h1>
     <p class="hero-sub">A warm roasted corner for slow mornings, rich artisan brews, crisp bites and long unhurried conversations.</p>
     <p class="hero-stats">
       <span>4.5<span class="dot">★</span> rated</span>
@@ -537,7 +575,26 @@ footer a:hover{ color: var(--amber-light); }
 <!-- ============================= AMBIENCE ============================= -->
 <section class="ambience">
   <div class="wrap">
-    <div class="divider"><svg viewBox="0 0 40 40" fill="none"><path fill="currentColor" d="M20 4C10.5 4 4 12.5 4 23.5C4 33.5 12.5 36 20 36C27.5 36 36 33.5 36 23.5C36 12.5 29.5 4 20 4ZM20 8.5C23.2 15.5 15.5 22.5 21.5 30.5C23.8 33 20 35.5 20 35.5C20 35.5 16.2 30.5 19.2 23.5C22.2 16.5 17.8 11.5 20 8.5Z"/></svg></div>
+    <div class="divider">
+      <svg class="cafe-grid-logo" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3.5">
+        <path d="M 12 12 L 64 12 C 78 12, 88 22, 88 36 L 88 88 L 36 88 C 22 88, 12 78, 12 64 Z" stroke-width="4" stroke-linejoin="round" />
+        <line x1="12" y1="50" x2="88" y2="50" stroke-width="3" />
+        <line x1="50" y1="12" x2="50" y2="88" stroke-width="3" />
+        <path d="M 20 42 L 31 22 L 42 42 Z" stroke-width="3.5" stroke-linejoin="round" />
+        <circle cx="31" cy="30" r="2.5" fill="currentColor" stroke="none" />
+        <rect x="28.5" y="36" width="5" height="6" stroke-width="2.5" />
+        <path d="M 50 42 Q 59 34 61 24 Q 52 26 50 42 Z" stroke-width="3" fill="none" />
+        <path d="M 50 42 Q 41 34 39 24 Q 48 26 50 42 Z" stroke-width="3" fill="none" />
+        <path d="M 68 22 Q 78 26 74 34 Q 70 42 82 44" stroke-width="2.5" stroke-linecap="round" fill="none" />
+        <path d="M 72 16 A 14 14 0 0 1 84 28" stroke-width="2.5" stroke-linecap="round" fill="none" />
+        <path d="M 18 80 A 24 24 0 0 1 44 80" stroke-width="3" stroke-linecap="round" />
+        <path d="M 24 80 A 18 18 0 0 1 38 80" stroke-width="3" stroke-linecap="round" />
+        <path d="M 30 80 A 12 12 0 0 1 32 80" stroke-width="3" stroke-linecap="round" />
+        <path d="M 58 60 H 78 V 69 C 78 75 73 79 68 79 C 63 79 58 75 58 69 Z" stroke-width="3.5" stroke-linejoin="round" />
+        <path d="M 78 63 H 82 C 84.5 63 86 64.5 86 67 C 86 69.5 84.5 71 82 71 H 78" stroke-width="3" />
+        <line x1="62" y1="83" x2="74" y2="83" stroke-width="3" stroke-linecap="round" />
+      </svg>
+    </div>
     <div class="ambience-grid" style="margin-top: var(--space-5);">
       <div class="amb-card">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 17l3-9 3 9M6.5 13h3M13 17V8h4a3 3 0 010 6h-4"/></svg>
@@ -642,8 +699,25 @@ footer a:hover{ color: var(--amber-light); }
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-          <svg viewBox="0 0 40 40" fill="none"><path fill="currentColor" d="M20 4C10.5 4 4 12.5 4 23.5C4 33.5 12.5 36 20 36C27.5 36 36 33.5 36 23.5C36 12.5 29.5 4 20 4ZM20 8.5C23.2 15.5 15.5 22.5 21.5 30.5C23.8 33 20 35.5 20 35.5C20 35.5 16.2 30.5 19.2 23.5C22.2 16.5 17.8 11.5 20 8.5Z"/></svg>
-          Coffee <em>&amp;</em> Crisps
+          <svg class="cafe-grid-logo" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3.5">
+            <path d="M 12 12 L 64 12 C 78 12, 88 22, 88 36 L 88 88 L 36 88 C 22 88, 12 78, 12 64 Z" stroke-width="4" stroke-linejoin="round" />
+            <line x1="12" y1="50" x2="88" y2="50" stroke-width="3" />
+            <line x1="50" y1="12" x2="50" y2="88" stroke-width="3" />
+            <path d="M 20 42 L 31 22 L 42 42 Z" stroke-width="3.5" stroke-linejoin="round" />
+            <circle cx="31" cy="30" r="2.5" fill="currentColor" stroke="none" />
+            <rect x="28.5" y="36" width="5" height="6" stroke-width="2.5" />
+            <path d="M 50 42 Q 59 34 61 24 Q 52 26 50 42 Z" stroke-width="3" fill="none" />
+            <path d="M 50 42 Q 41 34 39 24 Q 48 26 50 42 Z" stroke-width="3" fill="none" />
+            <path d="M 68 22 Q 78 26 74 34 Q 70 42 82 44" stroke-width="2.5" stroke-linecap="round" fill="none" />
+            <path d="M 72 16 A 14 14 0 0 1 84 28" stroke-width="2.5" stroke-linecap="round" fill="none" />
+            <path d="M 18 80 A 24 24 0 0 1 44 80" stroke-width="3" stroke-linecap="round" />
+            <path d="M 24 80 A 18 18 0 0 1 38 80" stroke-width="3" stroke-linecap="round" />
+            <path d="M 30 80 A 12 12 0 0 1 32 80" stroke-width="3" stroke-linecap="round" />
+            <path d="M 58 60 H 78 V 69 C 78 75 73 79 68 79 C 63 79 58 75 58 69 Z" stroke-width="3.5" stroke-linejoin="round" />
+            <path d="M 78 63 H 82 C 84.5 63 86 64.5 86 67 C 86 69.5 84.5 71 82 71 H 78" stroke-width="3" />
+            <line x1="62" y1="83" x2="74" y2="83" stroke-width="3" stroke-linecap="round" />
+          </svg>
+          <span>C<svg class="bean-o" viewBox="0 0 24 32"><path fill="currentColor" d="M12 2C5.5 2 2 8 2 16C2 24 5.5 30 12 30C18.5 30 22 24 22 16C22 8 18.5 2 12 2ZM12 6C15.2 11.2 9.2 16.2 14.2 22.2C16.2 24.2 13 26 12 26C11 26 7.8 22 9.8 17C11.8 12 8.8 8 12 6Z"/></svg>ffee <em>&amp;</em> Crisps</span>
         </div>
         <p class="footer-tag">A warm, unhurried cafe in Saroornagar, Hyderabad &mdash; good coffee, honest food, no rush.</p>
       </div>
@@ -676,7 +750,24 @@ footer a:hover{ color: var(--amber-light); }
 <div class="chat-widget">
   <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Chat with Coffee and Crisps Cafe">
     <div class="chat-head">
-      <svg viewBox="0 0 40 40" fill="none"><path fill="currentColor" d="M20 4C10.5 4 4 12.5 4 23.5C4 33.5 12.5 36 20 36C27.5 36 36 33.5 36 23.5C36 12.5 29.5 4 20 4ZM20 8.5C23.2 15.5 15.5 22.5 21.5 30.5C23.8 33 20 35.5 20 35.5C20 35.5 16.2 30.5 19.2 23.5C22.2 16.5 17.8 11.5 20 8.5Z"/></svg>
+      <svg class="cafe-grid-logo" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3.5">
+        <path d="M 12 12 L 64 12 C 78 12, 88 22, 88 36 L 88 88 L 36 88 C 22 88, 12 78, 12 64 Z" stroke-width="4" stroke-linejoin="round" />
+        <line x1="12" y1="50" x2="88" y2="50" stroke-width="3" />
+        <line x1="50" y1="12" x2="50" y2="88" stroke-width="3" />
+        <path d="M 20 42 L 31 22 L 42 42 Z" stroke-width="3.5" stroke-linejoin="round" />
+        <circle cx="31" cy="30" r="2.5" fill="currentColor" stroke="none" />
+        <rect x="28.5" y="36" width="5" height="6" stroke-width="2.5" />
+        <path d="M 50 42 Q 59 34 61 24 Q 52 26 50 42 Z" stroke-width="3" fill="none" />
+        <path d="M 50 42 Q 41 34 39 24 Q 48 26 50 42 Z" stroke-width="3" fill="none" />
+        <path d="M 68 22 Q 78 26 74 34 Q 70 42 82 44" stroke-width="2.5" stroke-linecap="round" fill="none" />
+        <path d="M 72 16 A 14 14 0 0 1 84 28" stroke-width="2.5" stroke-linecap="round" fill="none" />
+        <path d="M 18 80 A 24 24 0 0 1 44 80" stroke-width="3" stroke-linecap="round" />
+        <path d="M 24 80 A 18 18 0 0 1 38 80" stroke-width="3" stroke-linecap="round" />
+        <path d="M 30 80 A 12 12 0 0 1 32 80" stroke-width="3" stroke-linecap="round" />
+        <path d="M 58 60 H 78 V 69 C 78 75 73 79 68 79 C 63 79 58 75 58 69 Z" stroke-width="3.5" stroke-linejoin="round" />
+        <path d="M 78 63 H 82 C 84.5 63 86 64.5 86 67 C 86 69.5 84.5 71 82 71 H 78" stroke-width="3" />
+        <line x1="62" y1="83" x2="74" y2="83" stroke-width="3" stroke-linecap="round" />
+      </svg>
       <div><b>Cafe Assistant</b><span>Usually replies in a moment</span></div>
     </div>
     <div class="chat-body" id="chatBody" aria-live="polite">
@@ -730,13 +821,13 @@ footer a:hover{ color: var(--amber-light); }
   navScrim.addEventListener('click', closeMobileNav);
   navMobile.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMobileNav); });
 
-  /* ---------------- COFFEE BEAN & CRISP SHOWER ---------------- */
+  /* ---------------- COFFEE BEAN SHOWER ---------------- */
   var petalLayer = document.getElementById('petalLayer');
   var beanPaths = [
-    'M50 8 C25 8 10 28 10 52 C10 74 30 92 50 92 C70 92 90 74 90 52 C90 28 75 8 50 8 Z M50 16 C57 32 40 48 54 66 C60 74 50 82 50 82 C50 82 40 70 47 50 C54 34 44 24 50 16 Z',
-    'M50 10 C20 15 10 40 15 70 C20 90 55 95 80 80 C95 65 90 30 75 15 C60 5 35 8 50 10 Z'
+    'M50 4 C24 4 8 24 8 50 C8 76 24 96 50 96 C76 96 92 76 92 50 C92 24 76 4 50 4 Z M50 16 C58 32 40 48 55 68 C60 76 50 84 50 84 C50 84 40 72 45 52 C52 34 42 24 50 16 Z',
+    'M50 8 C28 8 12 26 12 50 C12 74 28 92 50 92 C72 92 88 74 88 50 C88 26 72 8 50 8 Z M50 18 C56 30 42 46 54 64 C60 72 50 80 50 80 C50 80 40 68 46 50 C52 34 44 24 50 18 Z'
   ];
-  var beanColors = ['#8B5A2B', '#D9822B', '#2A160E', '#E59837', '#B3641B', '#F2A950'];
+  var beanColors = ['#2A160E', '#3D2115', '#482B1D', '#5C3421', '#72432B', '#23120B'];
   var maxPetals = reduceMotion ? 5 : 16;
   var activePetals = 0;
 
@@ -808,7 +899,7 @@ footer a:hover{ color: var(--amber-light); }
       s.style.left = x + 'px';
       s.style.top = y + 'px';
       var color = beanColors[Math.floor(Math.random() * beanColors.length)];
-      s.innerHTML = '<svg viewBox="0 0 100 100"><path d="M50 8 C25 8 10 28 10 52 C10 74 30 92 50 92 C70 92 90 74 90 52 C90 28 75 8 50 8 Z M50 16 C57 32 40 48 54 66 C60 74 50 82 50 82 C50 82 40 70 47 50 C54 34 44 24 50 16 Z" fill="'+color+'"/></svg>';
+      s.innerHTML = '<svg viewBox="0 0 100 100"><path d="M50 4 C24 4 8 24 8 50 C8 76 24 96 50 96 C76 96 92 76 92 50 C92 24 76 4 50 4 Z M50 16 C58 32 40 48 55 68 C60 76 50 84 50 84 C50 84 40 72 45 52 C52 34 42 24 50 16 Z" fill="'+color+'"/></svg>';
       document.body.appendChild(s);
       setTimeout(function(){ s.remove(); }, 800);
     }
