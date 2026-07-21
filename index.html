@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee and Crisps Cafe | Saroornagar, Hyderabad</title>
+<meta name="description" content="Coffee and Crisps Cafe in Saroornagar, Hyderabad — a warm, garden-lit spot for coffee, comfort food and unhurried evenings. 4.5★ rated, open 11 AM – 10:45 PM daily.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='%23C97B87'%3E%3Cellipse cx='20' cy='10' rx='5' ry='9'/%3E%3Cellipse cx='20' cy='30' rx='5' ry='9'/%3E%3Cellipse cx='10' cy='20' rx='9' ry='5'/%3E%3Cellipse cx='30' cy='20' rx='9' ry='5'/%3E%3C/g%3E%3Ccircle cx='20' cy='20' r='5' fill='%23B8863B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,560;0,9..144,650;1,9..144,440;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+/* ============================= TOKENS ============================= */
+:root{
+  --cream:       #FBF3EC;
+  --cream-deep:  #F2E4D6;
+  --espresso:    #2B1B14;
+  --espresso-70: #4A342A;
+  --espresso-45: #8A7367;
+  --rose:        #C97B87;
+  --rose-deep:   #A85C6B;
+  --rose-light:  #E8B4BC;
+  --rose-pale:   #F6DEE1;
+  --sage:        #7C8B6F;
+  --gold:        #B8863B;
+  --paper:       #FFFDFB;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Manrope', sans-serif;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.25rem;
+  --space-5: 3.5rem;
+  --space-6: 5rem;
+  --space-7: 7rem;
+
+  --radius-sm: 8px;
+  --radius-md: 18px;
+  --radius-lg: 32px;
+  --radius-pill: 999px;
+
+  --shadow-soft: 0 20px 45px -24px rgba(43,27,20,0.35);
+  --shadow-lift: 0 30px 60px -28px rgba(43,27,20,0.45);
+
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+/* ============================= RESET ============================= */
+*,*::before,*::after{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin:0;
+  background: var(--cream);
+  color: var(--espresso-70);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img{ max-width:100%; display:block; }
+a{ color: inherit; text-decoration: none; }
+h1,h2,h3{ font-family: var(--font-display); color: var(--espresso); margin: 0; font-weight: 560; }
+p{ margin:0; }
+ul{ margin:0; padding:0; list-style:none; }
+button{ font-family: inherit; }
+:focus-visible{ outline: 2.5px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+
+.wrap{ max-width: 1180px; margin: 0 auto; padding: 0 var(--space-3); }
+.eyebrow{
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  display:flex; align-items:center; gap:0.6em;
+}
+.eyebrow::before{ content:''; width:22px; height:1.5px; background: var(--rose-deep); display:inline-block; }
+
+.section-head{ max-width: 620px; margin-bottom: var(--space-5); }
+.section-head h2{ font-size: clamp(2rem, 3.6vw, 2.85rem); margin-top: 0.5em; line-height: 1.08; }
+.section-head p{ margin-top: 1em; color: var(--espresso-45); font-size: 1.05rem; }
+
+.divider{ display:flex; align-items:center; justify-content:center; gap: var(--space-2); margin: 0 auto; width: 100%; max-width: 220px; }
+.divider::before,.divider::after{ content:''; height:1px; flex:1; background: var(--rose-light); }
+.divider svg{ width:16px; height:16px; flex-shrink:0; color: var(--rose); }
+
+/* buttons */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:0.5em;
+  padding: 0.95em 1.8em;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .3s ease, color .3s ease;
+  white-space: nowrap;
+}
+.btn-primary{ background: var(--espresso); color: var(--cream); box-shadow: var(--shadow-soft); }
+.btn-primary:hover{ transform: translateY(-2px); box-shadow: var(--shadow-lift); }
+.btn-ghost{ background: transparent; color: var(--espresso); border-color: var(--espresso-45); }
+.btn-ghost:hover{ background: var(--espresso); color: var(--cream); border-color: var(--espresso); }
+.btn-rose{ background: var(--rose); color: var(--paper); box-shadow: 0 16px 30px -16px rgba(169,92,107,.6); }
+.btn-rose:hover{ transform: translateY(-2px); background: var(--rose-deep); }
+
+/* ============================= PETAL LAYER ============================= */
+#petalLayer{
+  position: fixed; inset:0; pointer-events:none; z-index: 5; overflow:hidden;
+}
+.petal{
+  position:absolute; top:-8vh; will-change: transform, opacity;
+  animation-name: petal-fall; animation-timing-function: linear; animation-fill-mode: forwards;
+  opacity:.85;
+}
+.petal svg{ width:100%; height:100%; display:block; }
+@keyframes petal-fall{
+  0%   { transform: translate(0,0) rotate(0deg); opacity:0; }
+  6%   { opacity:.85; }
+  92%  { opacity:.7; }
+  100% { transform: translate(var(--drift,40px), 118vh) rotate(var(--spin,340deg)); opacity:0; }
+}
+
+/* ============================= CURSOR FLOWER ============================= */
+.flower-cursor{
+  position:fixed; top:0; left:0; width:26px; height:26px; pointer-events:none; z-index: 9999;
+  transform: translate3d(-50px,-50px,0) scale(.6) rotate(0deg);
+  opacity:0; transition: opacity .3s ease;
+}
+.flower-cursor svg{ width:100%; height:100%; filter: drop-shadow(0 4px 8px rgba(43,27,20,.25)); }
+body.has-flower-cursor{ cursor:none; }
+body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
+.petal-spark{
+  position:fixed; top:0; left:0; width:10px; height:10px; pointer-events:none; z-index:9998;
+  animation: spark-fade .75s var(--ease) forwards;
+}
+.petal-spark svg{ width:100%; height:100%; }
+@keyframes spark-fade{
+  0%{ opacity:.75; transform: translate(-50%,-50%) scale(1) rotate(0deg); }
+  100%{ opacity:0; transform: translate(-50%,-50%) scale(.3) rotate(70deg) translateY(14px); }
+}
+
+/* ============================= NAV ============================= */
+.nav{
+  position: sticky; top:0; z-index: 500;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 1.1rem var(--space-3);
+  background: rgba(251,243,236,0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .4s ease, box-shadow .4s ease, padding .4s ease;
+}
+.nav.scrolled{ border-color: rgba(43,27,20,.08); box-shadow: 0 12px 30px -24px rgba(43,27,20,.4); padding: 0.75rem var(--space-3); }
+.nav-logo{ font-family: var(--font-display); font-weight:650; font-size:1.25rem; color: var(--espresso); display:flex; align-items:center; gap:0.5em; }
+.nav-logo svg{ width:22px; height:22px; color: var(--rose); }
+.nav-logo em{ color: var(--rose-deep); font-style: italic; }
+.nav-links{ display:flex; align-items:center; gap: var(--space-4); }
+.nav-links a{ font-size:0.92rem; font-weight:600; color: var(--espresso-70); position:relative; padding: 0.2em 0; }
+.nav-links a::after{ content:''; position:absolute; left:0; bottom:-3px; width:0; height:1.5px; background: var(--rose-deep); transition: width .3s var(--ease); }
+.nav-links a:hover::after{ width:100%; }
+.nav-cta{ display:flex; align-items:center; gap: var(--space-2); }
+.nav-burger{ display:none; background:none; border:none; padding: 0.4rem; }
+.nav-burger svg{ width:24px; height:24px; color: var(--espresso); }
+.nav-mobile{ display:none; }
+
+@media (max-width: 900px){
+  .nav-links{ display:none; }
+  .nav-burger{ display:block; }
+  .nav-cta .btn-ghost{ display:none; }
+  .nav-mobile{
+    display:flex; flex-direction:column; gap:1.1rem;
+    position: fixed; top:0; right:0; height:100vh; width: min(78vw,320px);
+    background: var(--paper); padding: 6.5rem var(--space-3) var(--space-3);
+    transform: translateX(100%); transition: transform .45s var(--ease);
+    box-shadow: -30px 0 60px -30px rgba(43,27,20,.4); z-index: 600;
+  }
+  .nav-mobile.open{ transform: translateX(0); }
+  .nav-mobile a{ font-family: var(--font-display); font-size:1.4rem; color: var(--espresso); }
+  .nav-mobile .btn{ margin-top: 1rem; align-self:flex-start; }
+  .nav-scrim{ position:fixed; inset:0; background: rgba(43,27,20,.35); opacity:0; pointer-events:none; transition:opacity .4s ease; z-index:550; }
+  .nav-scrim.show{ opacity:1; pointer-events:auto; }
+}
+
+/* ============================= HERO ============================= */
+.hero{
+  position: relative;
+  min-height: 92vh;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+  padding: var(--space-6) var(--space-3) var(--space-5);
+  background:
+    radial-gradient(ellipse 60% 50% at 18% 12%, rgba(232,180,188,.55), transparent 60%),
+    radial-gradient(ellipse 55% 45% at 85% 85%, rgba(124,139,111,.18), transparent 60%),
+    linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+  overflow:hidden;
+}
+.hero-inner{ max-width: 780px; position:relative; z-index:2; }
+.hero .eyebrow{ justify-content:center; margin-bottom: var(--space-3); }
+.hero h1{
+  font-size: clamp(2.8rem, 7.2vw, 5.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+}
+.hero h1 em{ font-style: italic; color: var(--rose-deep); font-weight:500; }
+.hero-sub{
+  margin: var(--space-3) auto 0;
+  max-width: 480px;
+  font-size: 1.15rem;
+  color: var(--espresso-45);
+}
+.hero-stats{
+  margin-top: var(--space-3);
+  font-size: 0.9rem; font-weight:700; letter-spacing:.03em;
+  color: var(--espresso-70);
+  display:flex; gap: 0.6em; justify-content:center; flex-wrap:wrap;
+}
+.hero-stats span{ display:flex; align-items:center; gap:0.4em; }
+.hero-stats .dot{ color: var(--rose-light); }
+.hero-cta{ margin-top: var(--space-4); display:flex; gap: var(--space-2); justify-content:center; flex-wrap:wrap; }
+.hero-blooms{ position:absolute; inset:0; z-index:1; pointer-events:none; opacity:.9; }
+.hero-blooms svg{ position:absolute; }
+
+.scroll-cue{
+  position:absolute; bottom: var(--space-3); left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:0.5em;
+  font-size:0.72rem; letter-spacing:.14em; text-transform:uppercase; color: var(--espresso-45); font-weight:700;
+}
+.scroll-cue .line{ width:1.5px; height:34px; background: linear-gradient(var(--rose-deep), transparent); animation: cue-pulse 2.2s ease-in-out infinite; }
+@keyframes cue-pulse{ 0%,100%{ opacity:.35; } 50%{ opacity:1; } }
+
+/* ============================= ABOUT ============================= */
+.about{ padding: var(--space-7) 0; }
+.about .wrap{ display:grid; grid-template-columns: 1fr 0.85fr; gap: var(--space-6); align-items:center; }
+.about-copy p{ margin-top: var(--space-2); color: var(--espresso-45); font-size:1.05rem; }
+.about-copy p:first-of-type{ margin-top: var(--space-3); }
+.about-list{ margin-top: var(--space-4); display:grid; gap: var(--space-2); }
+.about-list li{ display:flex; gap:0.8em; align-items:flex-start; font-size:0.98rem; color: var(--espresso-70); font-weight:600; }
+.about-list svg{ width:18px; height:18px; flex-shrink:0; margin-top:3px; color: var(--sage); }
+.about-panel{
+  position:relative; aspect-ratio: 4/5; border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--rose-pale) 0%, var(--cream-deep) 55%, var(--rose-light) 100%);
+  box-shadow: var(--shadow-lift);
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+}
+.about-panel .ring{ position:absolute; border:1.5px solid rgba(43,27,20,.14); border-radius:50%; }
+.about-panel .ring.r1{ width:78%; height:78%; }
+.about-panel .ring.r2{ width:56%; height:56%; }
+.about-panel .cup{ width: 34%; color: var(--espresso); position:relative; z-index:2; }
+.about-badge{
+  position:absolute; bottom: var(--space-3); left: var(--space-3);
+  background: var(--paper); border-radius: var(--radius-md); padding: 1rem 1.3rem;
+  box-shadow: var(--shadow-soft); font-family: var(--font-display); font-size:1.6rem; color: var(--espresso);
+  z-index:3;
+}
+.about-badge span{ display:block; font-family: var(--font-body); font-size:0.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color: var(--espresso-45); margin-top:0.2em; }
+
+@media (max-width: 860px){
+  .about .wrap{ grid-template-columns: 1fr; }
+  .about-panel{ order:-1; aspect-ratio: 16/10; }
+}
+
+/* ============================= MENU ============================= */
+.menu{ padding: var(--space-7) 0; background: var(--paper); position:relative; }
+.menu-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: var(--space-4); }
+.menu-card{
+  background: var(--cream); border-radius: var(--radius-lg); padding: var(--space-4);
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+  border: 1px solid rgba(43,27,20,.06);
+}
+.menu-card:hover{ transform: translateY(-6px); box-shadow: var(--shadow-soft); }
+.menu-card .tag{ width:44px; height:44px; border-radius:50%; background: var(--rose-pale); display:flex; align-items:center; justify-content:center; color: var(--rose-deep); margin-bottom: var(--space-3); }
+.menu-card .tag svg{ width:22px; height:22px; }
+.menu-card h3{ font-size:1.35rem; margin-bottom: var(--space-2); }
+.menu-card ul{ display:grid; gap: 0.7rem; }
+.menu-card li{ font-size:0.95rem; color: var(--espresso-70); padding-bottom:0.7rem; border-bottom: 1px dashed rgba(43,27,20,.12); }
+.menu-card li:last-child{ border-bottom:none; padding-bottom:0; }
+.menu-card li b{ display:block; color: var(--espresso); font-weight:700; }
+.menu-card li small{ color: var(--espresso-45); }
+.menu-note{ text-align:center; margin-top: var(--space-4); color: var(--espresso-45); font-size:0.9rem; }
+
+@media (max-width: 900px){ .menu-grid{ grid-template-columns:1fr; } }
+
+/* ============================= AMBIENCE STRIP ============================= */
+.ambience{ padding: var(--space-6) 0; }
+.ambience-grid{ display:grid; grid-template-columns: repeat(4,1fr); gap: var(--space-3); }
+.amb-card{
+  padding: var(--space-4) var(--space-3); border-radius: var(--radius-md);
+  background: linear-gradient(160deg, var(--cream-deep), var(--cream));
+  text-align:center; border: 1px solid rgba(43,27,20,.06);
+}
+.amb-card svg{ width:28px; height:28px; color: var(--rose-deep); margin: 0 auto var(--space-2); }
+.amb-card h4{ font-family: var(--font-display); font-size:1.05rem; color: var(--espresso); font-weight:600; }
+.amb-card p{ font-size:0.85rem; color: var(--espresso-45); margin-top:0.4em; }
+@media (max-width: 860px){ .ambience-grid{ grid-template-columns: repeat(2,1fr); } }
+
+/* ============================= REVIEWS ============================= */
+.reviews{ padding: var(--space-7) 0; background: linear-gradient(180deg, var(--paper), var(--cream)); }
+.reviews-top{ display:flex; align-items:flex-end; justify-content:space-between; gap: var(--space-3); flex-wrap:wrap; margin-bottom: var(--space-5); }
+.rating-badge{ display:flex; align-items:center; gap: var(--space-2); }
+.rating-badge .num{ font-family: var(--font-display); font-size:3rem; color: var(--espresso); line-height:1; }
+.rating-badge .meta{ font-size:0.85rem; color: var(--espresso-45); }
+.rating-badge .stars{ color: var(--gold); letter-spacing:2px; }
+.review-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: var(--space-3); }
+.review-card{ background: var(--paper); border-radius: var(--radius-md); padding: var(--space-4); box-shadow: var(--shadow-soft); }
+.review-card .stars{ color: var(--gold); letter-spacing:2px; font-size:0.9rem; }
+.review-card p{ margin-top: var(--space-2); font-size:0.95rem; color: var(--espresso-70); line-height:1.65; }
+.review-card .who{ margin-top: var(--space-3); font-size:0.82rem; font-weight:700; color: var(--espresso-45); text-transform:uppercase; letter-spacing:.06em; }
+.reviews-link{ display:block; text-align:center; margin-top: var(--space-4); font-weight:700; color: var(--rose-deep); font-size:0.95rem; }
+@media (max-width: 900px){ .review-grid{ grid-template-columns:1fr; } }
+
+/* ============================= VISIT ============================= */
+.visit{ padding: var(--space-7) 0; }
+.visit .wrap{ display:grid; grid-template-columns: 0.95fr 1.05fr; gap: var(--space-6); }
+.visit-info h2{ font-size: clamp(2rem,3.4vw,2.7rem); margin-top:0.5em; }
+.visit-rows{ margin-top: var(--space-4); display:grid; gap: var(--space-3); }
+.visit-row{ display:flex; gap: var(--space-2); align-items:flex-start; }
+.visit-row svg{ width:20px; height:20px; color: var(--rose-deep); flex-shrink:0; margin-top:3px; }
+.visit-row b{ display:block; color: var(--espresso); font-size:0.95rem; }
+.visit-row span{ color: var(--espresso-45); font-size:0.92rem; }
+.hours-table{ margin-top:0.2em; display:grid; gap:0.25rem; }
+.hours-table div{ display:flex; justify-content:space-between; gap:1rem; max-width:260px; font-size:0.88rem; color: var(--espresso-45); }
+.visit-cta{ margin-top: var(--space-4); display:flex; gap: var(--space-2); flex-wrap:wrap; }
+.map-frame{ border-radius: var(--radius-lg); overflow:hidden; box-shadow: var(--shadow-lift); border: 1px solid rgba(43,27,20,.08); min-height:340px; }
+.map-frame iframe{ width:100%; height:100%; min-height:340px; border:0; display:block; }
+@media (max-width: 900px){ .visit .wrap{ grid-template-columns:1fr; } }
+
+/* ============================= FOOTER ============================= */
+footer{ background: var(--espresso); color: rgba(251,243,236,.75); padding: var(--space-6) 0 var(--space-3); }
+.footer-grid{ display:grid; grid-template-columns: 1.3fr 1fr 1fr; gap: var(--space-5); padding-bottom: var(--space-5); border-bottom: 1px solid rgba(251,243,236,.12); }
+.footer-brand{ font-family: var(--font-display); font-size:1.5rem; color: var(--cream); display:flex; align-items:center; gap:0.5em; }
+.footer-brand svg{ width:22px; height:22px; color: var(--rose-light); }
+.footer-brand em{ color: var(--rose-light); font-style:italic; }
+.footer-tag{ margin-top: var(--space-2); font-size:0.92rem; max-width:280px; line-height:1.6; }
+footer h5{ color: var(--cream); font-size:0.82rem; letter-spacing:.1em; text-transform:uppercase; margin-bottom: var(--space-2); font-weight:700; }
+footer ul{ display:grid; gap:0.65rem; }
+footer a{ font-size:0.92rem; }
+footer a:hover{ color: var(--rose-light); }
+.footer-bottom{ padding-top: var(--space-3); display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.6rem; font-size:0.82rem; color: rgba(251,243,236,.5); }
+@media (max-width: 760px){ .footer-grid{ grid-template-columns:1fr; gap: var(--space-4); } }
+
+/* ============================= CHATBOT ============================= */
+.chat-widget{ position: fixed; right: 1.4rem; bottom: 1.4rem; z-index: 800; }
+.chat-toggle{
+  width:60px; height:60px; border-radius:50%; border:none; cursor:pointer;
+  background: var(--espresso); color: var(--cream);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow: var(--shadow-lift);
+  transition: transform .35s var(--ease);
+}
+.chat-toggle:hover{ transform: scale(1.06) rotate(-4deg); }
+.chat-toggle svg{ width:26px; height:26px; }
+.chat-toggle .icon-close{ display:none; }
+.chat-toggle.open .icon-chat{ display:none; }
+.chat-toggle.open .icon-close{ display:block; }
+.chat-dot{ position:absolute; top:2px; right:2px; width:12px; height:12px; border-radius:50%; background: var(--rose); border:2px solid var(--cream); }
+
+.chat-panel{
+  position:absolute; bottom: 74px; right:0;
+  width: min(360px, 88vw); height: min(480px, 68vh);
+  background: var(--paper); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lift); border: 1px solid rgba(43,27,20,.08);
+  display:flex; flex-direction:column; overflow:hidden;
+  transform: translateY(16px) scale(.96); opacity:0; pointer-events:none;
+  transition: transform .35s var(--ease), opacity .3s ease;
+}
+.chat-panel.open{ transform: translateY(0) scale(1); opacity:1; pointer-events:auto; }
+.chat-head{ background: linear-gradient(120deg, var(--rose-deep), var(--rose)); color: var(--paper); padding: 1.1rem 1.2rem; display:flex; align-items:center; gap:0.7em; }
+.chat-head svg{ width:22px; height:22px; }
+.chat-head b{ display:block; font-family: var(--font-display); font-size:1.02rem; font-weight:600; }
+.chat-head span{ display:block; font-size:0.72rem; opacity:.85; }
+.chat-body{ flex:1; overflow-y:auto; padding: 1rem 1rem 0.5rem; display:flex; flex-direction:column; gap:0.65rem; }
+.msg{ max-width:82%; padding:0.65rem 0.9rem; border-radius: 14px; font-size:0.88rem; line-height:1.5; }
+.msg.bot{ background: var(--cream-deep); color: var(--espresso-70); align-self:flex-start; border-bottom-left-radius:4px; }
+.msg.user{ background: var(--espresso); color: var(--cream); align-self:flex-end; border-bottom-right-radius:4px; }
+.msg.typing{ display:flex; gap:4px; padding:0.8rem 1rem; }
+.msg.typing span{ width:6px; height:6px; border-radius:50%; background: var(--espresso-45); animation: typing-bounce 1.1s ease-in-out infinite; }
+.msg.typing span:nth-child(2){ animation-delay:.15s; }
+.msg.typing span:nth-child(3){ animation-delay:.3s; }
+@keyframes typing-bounce{ 0%,60%,100%{ transform: translateY(0); opacity:.5; } 30%{ transform: translateY(-4px); opacity:1; } }
+.chat-chips{ display:flex; gap:0.5rem; flex-wrap:wrap; padding: 0.6rem 1rem; }
+.chip{ background: var(--rose-pale); color: var(--rose-deep); border:none; border-radius: var(--radius-pill); padding:0.4rem 0.85rem; font-size:0.76rem; font-weight:700; cursor:pointer; transition: background .25s ease; }
+.chip:hover{ background: var(--rose-light); }
+.chat-input-row{ display:flex; gap:0.5rem; padding: 0.8rem; border-top: 1px solid rgba(43,27,20,.08); }
+.chat-input-row input{ flex:1; border:1.5px solid rgba(43,27,20,.14); border-radius: var(--radius-pill); padding:0.65rem 1rem; font-size:0.88rem; font-family:inherit; background: var(--cream); color: var(--espresso); }
+.chat-input-row input:focus{ outline:none; border-color: var(--rose); }
+.chat-send{ width:40px; height:40px; border-radius:50%; border:none; background: var(--espresso); color: var(--cream); display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0; }
+.chat-send svg{ width:17px; height:17px; }
+
+@media (max-width: 480px){
+  .chat-panel{ width: 92vw; right: -0.2rem; }
+}
+
+/* ============================= UTIL ============================= */
+.skip-link{ position:absolute; left:-999px; top:auto; background: var(--espresso); color:var(--cream); padding: 0.8rem 1.2rem; border-radius: var(--radius-sm); z-index:9999; }
+.skip-link:focus{ left: 1rem; top: 1rem; }
+
+</style>
+</head>
+<body>
+
+<a href="#home" class="skip-link">Skip to content</a>
+
+<!-- ambient rose petals, purely decorative -->
+<div id="petalLayer" aria-hidden="true"></div>
+<div class="flower-cursor" id="flowerCursor" aria-hidden="true">
+  <svg viewBox="0 0 40 40"><g fill="var(--rose)"><ellipse cx="20" cy="10" rx="5" ry="9"/><ellipse cx="20" cy="30" rx="5" ry="9"/><ellipse cx="10" cy="20" rx="9" ry="5"/><ellipse cx="30" cy="20" rx="9" ry="5"/></g><circle cx="20" cy="20" r="5" fill="var(--gold)"/></svg>
+</div>
+
+<nav class="nav" id="siteNav">
+  <a class="nav-logo" href="#home">
+    <svg viewBox="0 0 40 40" fill="none"><g fill="currentColor"><ellipse cx="20" cy="10" rx="4.5" ry="8"/><ellipse cx="20" cy="30" rx="4.5" ry="8"/><ellipse cx="10" cy="20" rx="8" ry="4.5"/><ellipse cx="30" cy="20" rx="8" ry="4.5"/></g><circle cx="20" cy="20" r="4.5" fill="var(--gold)"/></svg>
+    Coffee <em>&amp;</em> Crisps
+  </a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#visit">Visit</a>
+  </div>
+  <div class="nav-cta">
+    <a class="btn btn-ghost" href="tel:+917799844644">Call</a>
+    <a class="btn btn-primary" href="#visit">Get Directions</a>
+  </div>
+  <button class="nav-burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+  </button>
+</nav>
+<div class="nav-scrim" id="navScrim"></div>
+<div class="nav-mobile" id="navMobile">
+  <a href="#about">About</a>
+  <a href="#menu">Menu</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#visit">Visit</a>
+  <a class="btn btn-primary" href="tel:+917799844644">Call to Reserve</a>
+</div>
+
+<!-- ============================= HERO ============================= -->
+<header class="hero" id="home">
+  <div class="hero-blooms" id="heroBlooms"></div>
+  <div class="hero-inner">
+    <p class="eyebrow">Saroornagar &middot; Hyderabad</p>
+    <h1>Coffee <span>&amp;</span> Crisps <em>Cafe</em></h1>
+    <p class="hero-sub">A petal-soft corner for slow mornings, long conversations and a menu that keeps regulars coming back.</p>
+    <p class="hero-stats">
+      <span>4.5<span class="dot">★</span> rated</span>
+      <span class="dot">&bull;</span>
+      <span>1,300+ Google reviews</span>
+      <span class="dot">&bull;</span>
+      <span>Open till 10:45 PM</span>
+    </p>
+    <div class="hero-cta">
+      <a href="tel:+917799844644" class="btn btn-primary">Reserve a Table</a>
+      <a href="#menu" class="btn btn-ghost">View Menu</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+</header>
+
+<!-- ============================= ABOUT ============================= -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-copy">
+      <p class="eyebrow">Our Story</p>
+      <h2>Unhurried, by design</h2>
+      <p>Tucked into Road Number&nbsp;1 in Saroornagar, Coffee and Crisps has quietly become the neighbourhood's go-to for a cup that's actually good and a table nobody rushes you off. No loud playlists, no clatter &mdash; just warm light, comfortable seating and a menu built for lingering.</p>
+      <p>Guests keep coming back for the same reasons: a kitchen that treats comfort food seriously, a room that photographs as good as it feels, and a team that remembers your order by the third visit.</p>
+      <ul class="about-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Valet parking &amp; spotless washrooms</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Calm, unhurried evenings &mdash; even on weekends</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Generous portions, attentive service</li>
+      </ul>
+    </div>
+    <div class="about-panel">
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <svg class="cup" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M20 38h50v22a20 20 0 01-20 20H40a20 20 0 01-20-20V38z" stroke-linejoin="round"/>
+        <path d="M70 44h6a10 10 0 010 20h-6" />
+        <path d="M30 30c2-6 8-6 10 0M46 30c2-6 8-6 10 0" stroke-linecap="round"/>
+      </svg>
+      <div class="about-badge">4.5<span>Google rating</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= MENU ============================= -->
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What's Brewing</p>
+      <h2>A menu people talk about</h2>
+      <p>The dishes guests mention again and again &mdash; grouped so you can build your own order.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h14v5a5 5 0 01-5 5H8a5 5 0 01-5-5V8z"/><path d="M17 10h1.5a2.5 2.5 0 010 5H17" /><path d="M7 4c.5-1.5 2-1.5 2 0M11 4c.5-1.5 2-1.5 2 0" stroke-linecap="round"/></svg></div>
+        <h3>Coffee &amp; Coolers</h3>
+        <ul>
+          <li><b>Signature Cappuccino</b><small>The house order &mdash; smooth, never bitter</small></li>
+          <li><b>Iced Peach Cooler</b><small>Bright, fruity, built for warm afternoons</small></li>
+          <li><b>Classic Milkshakes</b><small>Thick, generous, old-school good</small></li>
+        </ul>
+      </div>
+      <div class="menu-card">
+        <div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11h16l-1.5 7a2 2 0 01-2 1.6H7.5A2 2 0 015.5 18L4 11z"/><path d="M6 11a6 6 0 0112 0" stroke-linecap="round"/></svg></div>
+        <h3>Small Plates &amp; Mains</h3>
+        <ul>
+          <li><b>Loaded Cheese Fries</b><small>Crisp fries, generous cheese, fresh salad on the side</small></li>
+          <li><b>Peri-Peri Chicken Crumbs</b><small>Crispy bites, peri-peri kick, house mayo dip</small></li>
+          <li><b>Wood-fired Pizza &amp; Pasta</b><small>Comfort-food classics done properly</small></li>
+        </ul>
+      </div>
+      <div class="menu-card">
+        <div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Sweet Endings</h3>
+        <ul>
+          <li><b>Sizzling Chocolate Brownie</b><small>Warm, gooey, the table's favourite</small></li>
+          <li><b>Brownie Hot Chocolate</b><small>Guests call it "melts in your mouth"</small></li>
+          <li><b>Mango Kunafa</b><small>Seasonal, syrup-soaked, shareable</small></li>
+        </ul>
+      </div>
+    </div>
+    <p class="menu-note">Full menu &amp; current prices available in-cafe &mdash; ask your server or call ahead.</p>
+  </div>
+</section>
+
+<!-- ============================= AMBIENCE ============================= -->
+<section class="ambience">
+  <div class="wrap">
+    <div class="divider"><svg viewBox="0 0 40 40" fill="currentColor"><ellipse cx="20" cy="10" rx="4" ry="7"/><ellipse cx="20" cy="30" rx="4" ry="7"/><ellipse cx="10" cy="20" rx="7" ry="4"/><ellipse cx="30" cy="20" rx="7" ry="4"/></svg></div>
+    <div class="ambience-grid" style="margin-top: var(--space-5);">
+      <div class="amb-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 17l3-9 3 9M6.5 13h3M13 17V8h4a3 3 0 010 6h-4"/></svg>
+        <h4>Valet Parking</h4>
+        <p>Hassle-free arrivals, every visit</p>
+      </div>
+      <div class="amb-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-9-9a5 5 0 019-3 5 5 0 019 3c-2 4.5-9 9-9 9z"/></svg>
+        <h4>Warm Service</h4>
+        <p>Friendly, attentive, never rushed</p>
+      </div>
+      <div class="amb-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="4"/></svg>
+        <h4>Peaceful Evenings</h4>
+        <p>Low noise, easy conversation</p>
+      </div>
+      <div class="amb-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 4v16M4 10h4" /></svg>
+        <h4>Clean, Comfortable</h4>
+        <p>Spotless washrooms, cared-for space</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= REVIEWS ============================= -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="reviews-top">
+      <div>
+        <p class="eyebrow">Loved Locally</p>
+        <h2 style="font-size:clamp(2rem,3.4vw,2.7rem); margin-top:0.5em;">What guests are saying</h2>
+      </div>
+      <div class="rating-badge">
+        <div class="num">4.5</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="meta">1,362 Google reviews</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>The fries and cheese board hit the spot, and the coffee was properly good. Valet parking and clean washrooms made it an easy, comfortable stop for a quick bite.</p>
+        <div class="who">Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>Their hot chocolate brownie dessert is the kind you think about days later &mdash; rich, warm and properly indulgent. The whole space has a cozy, cute feel that's perfect for evenings.</p>
+        <div class="who">Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★☆</div>
+        <p>Warm welcome from the staff, seriously good pizza and coffee, and a relaxed atmosphere that makes you want to stay a while longer than planned.</p>
+        <div class="who">Google Review</div>
+      </div>
+    </div>
+    <a class="reviews-link" href="https://maps.app.goo.gl/e9cRGW7v1hxA7aESA" target="_blank" rel="noopener">Read more reviews on Google Maps &rarr;</a>
+  </div>
+</section>
+
+<!-- ============================= VISIT ============================= -->
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="visit-info">
+      <p class="eyebrow">Visit Us</p>
+      <h2>Find your table</h2>
+      <div class="visit-rows">
+        <div class="visit-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 5.5-8 12-8 12s-8-6.5-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><b>Address</b><span>Rd Number 1, Saroornagar, Doctors Colony, Hyderabad, Telangana 500035</span></div>
+        </div>
+        <div class="visit-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8 9.7a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg>
+          <div><b>Phone</b><span><a href="tel:+917799844644">+91 77998 44644</a></span></div>
+        </div>
+        <div class="visit-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2" stroke-linecap="round"/></svg>
+          <div>
+            <b>Hours</b>
+            <div class="hours-table">
+              <div><span>Monday &ndash; Sunday</span><span>11:00 AM &ndash; 10:45 PM</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="visit-cta">
+        <a class="btn btn-rose" href="https://maps.app.goo.gl/e9cRGW7v1hxA7aESA" target="_blank" rel="noopener">Get Directions</a>
+        <a class="btn btn-ghost" href="tel:+917799844644">Call to Reserve</a>
+      </div>
+    </div>
+    <div class="map-frame">
+      <iframe src="https://www.google.com/maps?q=Coffee+and+Crisps+Cafe,+Rd+Number+1,+Saroornagar,+Hyderabad&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Coffee and Crisps Cafe location map"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FOOTER ============================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 40 40" fill="none"><g fill="currentColor"><ellipse cx="20" cy="10" rx="4.5" ry="8"/><ellipse cx="20" cy="30" rx="4.5" ry="8"/><ellipse cx="10" cy="20" rx="8" ry="4.5"/><ellipse cx="30" cy="20" rx="8" ry="4.5"/></g><circle cx="20" cy="20" r="4.5" fill="var(--gold)"/></svg>
+          Coffee <em>&amp;</em> Crisps
+        </div>
+        <p class="footer-tag">A warm, unhurried cafe in Saroornagar, Hyderabad &mdash; good coffee, honest food, no rush.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#visit">Visit</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+917799844644">+91 77998 44644</a></li>
+          <li>Rd Number 1, Saroornagar</li>
+          <li>Hyderabad, Telangana 500035</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Coffee and Crisps Cafe. All rights reserved.</span>
+      <span>Crafted with 🌸 for slow mornings</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================= CHATBOT ============================= -->
+<div class="chat-widget">
+  <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Chat with Coffee and Crisps Cafe">
+    <div class="chat-head">
+      <svg viewBox="0 0 40 40" fill="none"><g fill="currentColor"><ellipse cx="20" cy="10" rx="4.5" ry="8"/><ellipse cx="20" cy="30" rx="4.5" ry="8"/><ellipse cx="10" cy="20" rx="8" ry="4.5"/><ellipse cx="30" cy="20" rx="8" ry="4.5"/></g><circle cx="20" cy="20" r="4.5" fill="var(--gold)"/></svg>
+      <div><b>Cafe Assistant</b><span>Usually replies in a moment</span></div>
+    </div>
+    <div class="chat-body" id="chatBody" aria-live="polite">
+      <div class="msg bot">Hi! 👋 I'm the Coffee and Crisps assistant. Ask me about our hours, menu, location or reservations.</div>
+    </div>
+    <div class="chat-chips" id="chatChips">
+      <button class="chip" data-q="hours">Hours</button>
+      <button class="chip" data-q="menu">Menu</button>
+      <button class="chip" data-q="location">Location</button>
+      <button class="chip" data-q="reserve">Reservations</button>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Type a question..." aria-label="Type your question">
+      <button class="chat-send" id="chatSend" aria-label="Send message">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <button class="chat-toggle" id="chatToggle" aria-label="Open chat" aria-expanded="false">
+    <span class="chat-dot"></span>
+    <svg class="icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 01-9 8.4 8.6 8.6 0 01-3.5-.75L3 20l1-4.6A8.4 8.4 0 1121 11.5z" stroke-linejoin="round"/></svg>
+    <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+  </button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isFinePointer = window.matchMedia('(pointer: fine)').matches;
+
+  /* ---------------- NAV ---------------- */
+  var nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 30);
+  }, { passive:true });
+
+  var burger = document.getElementById('burgerBtn');
+  var navMobile = document.getElementById('navMobile');
+  var navScrim = document.getElementById('navScrim');
+  function closeMobileNav(){
+    navMobile.classList.remove('open');
+    navScrim.classList.remove('show');
+    burger.setAttribute('aria-expanded','false');
+  }
+  burger.addEventListener('click', function(){
+    var open = navMobile.classList.toggle('open');
+    navScrim.classList.toggle('show', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  navScrim.addEventListener('click', closeMobileNav);
+  navMobile.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMobileNav); });
+
+  /* ---------------- ROSE PETAL SHOWER ---------------- */
+  var petalLayer = document.getElementById('petalLayer');
+  var petalPaths = [
+    'M50 2 C78 20 78 58 50 98 C22 58 22 20 50 2 Z',
+    'M50 4 C72 24 66 70 50 96 C34 70 28 24 50 4 Z'
+  ];
+  var petalColors = ['#C97B87','#E8B4BC','#A85C6B','#F0C6CC'];
+  var maxPetals = reduceMotion ? 5 : 16;
+  var activePetals = 0;
+
+  function spawnPetal(){
+    if (activePetals >= maxPetals) return;
+    activePetals++;
+    var el = document.createElement('div');
+    el.className = 'petal';
+    var size = 10 + Math.random() * 14;
+    var startX = Math.random() * 100;
+    var duration = reduceMotion ? 0 : 9 + Math.random() * 7;
+    var drift = (Math.random() * 160 - 80) + 'px';
+    var spin = Math.round(200 + Math.random() * 260) + 'deg';
+    var path = petalPaths[Math.floor(Math.random() * petalPaths.length)];
+    var color = petalColors[Math.floor(Math.random() * petalColors.length)];
+
+    el.style.left = startX + 'vw';
+    el.style.width = size + 'px';
+    el.style.height = size + 'px';
+    el.style.setProperty('--drift', drift);
+    el.style.setProperty('--spin', spin);
+    el.style.animationDuration = duration + 's';
+    el.innerHTML = '<svg viewBox="0 0 100 100"><path d="'+path+'" fill="'+color+'"/></svg>';
+
+    el.addEventListener('animationend', function(){
+      el.remove();
+      activePetals--;
+    });
+    petalLayer.appendChild(el);
+  }
+
+  var spawnInterval = reduceMotion ? 4000 : 850;
+  spawnPetal();
+  setInterval(function(){
+    if (document.hidden) return;
+    spawnPetal();
+  }, spawnInterval);
+
+  /* ---------------- FLOWER CURSOR ---------------- */
+  if (isFinePointer && !reduceMotion) {
+    document.body.classList.add('has-flower-cursor');
+    var cursor = document.getElementById('flowerCursor');
+    var cx = 0, cy = 0, tx = 0, ty = 0;
+    var lastSpark = 0;
+
+    function loop(){
+      cx += (tx - cx) * 0.22;
+      cy += (ty - cy) * 0.22;
+      cursor.style.transform = 'translate3d('+ (cx-13) +'px,'+ (cy-13) +'px,0) rotate('+ (cx*0.05) +'deg)';
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+
+    window.addEventListener('mousemove', function(e){
+      tx = e.clientX; ty = e.clientY;
+      cursor.style.opacity = '1';
+      var now = Date.now();
+      if (now - lastSpark > 220) {
+        lastSpark = now;
+        spawnSpark(e.clientX, e.clientY);
+      }
+    });
+    document.addEventListener('mouseleave', function(){ cursor.style.opacity = '0'; });
+    document.addEventListener('mousedown', function(){ cursor.style.transform += ' scale(0.8)'; });
+
+    function spawnSpark(x,y){
+      var s = document.createElement('div');
+      s.className = 'petal-spark';
+      s.style.left = x + 'px';
+      s.style.top = y + 'px';
+      var color = petalColors[Math.floor(Math.random() * petalColors.length)];
+      s.innerHTML = '<svg viewBox="0 0 100 100"><path d="M50 4 C72 24 66 70 50 96 C34 70 28 24 50 4 Z" fill="'+color+'"/></svg>';
+      document.body.appendChild(s);
+      setTimeout(function(){ s.remove(); }, 800);
+    }
+  }
+
+  /* ---------------- CHATBOT ---------------- */
+  var toggle = document.getElementById('chatToggle');
+  var panel = document.getElementById('chatPanel');
+  var body = document.getElementById('chatBody');
+  var input = document.getElementById('chatInput');
+  var sendBtn = document.getElementById('chatSend');
+  var chips = document.getElementById('chatChips');
+
+  toggle.addEventListener('click', function(){
+    var open = panel.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) setTimeout(function(){ input.focus(); }, 300);
+  });
+
+  var intents = [
+    { kw:['hour','time','open','close','timing'], a:"We're open every day, 11:00 AM to 10:45 PM \u2014 no weekly off." },
+    { kw:['menu','food','eat','dish','item','pasta','pizza','dessert','brownie','kunafa'], a:"Guest favourites: Loaded Cheese Fries, Peri-Peri Chicken Crumbs, wood-fired Pizza & Pasta, and the Sizzling Chocolate Brownie. Full menu is on this page and in-cafe." },
+    { kw:['locat','address','where','direction','map'], a:"We're on Rd Number 1, Saroornagar, Doctors Colony, Hyderabad, Telangana 500035. Tap 'Get Directions' below the Visit section for the map." },
+    { kw:['reserve','reservation','book','table'], a:"For reservations, the fastest way is to call us at +91 77998 44644 \u2014 we'll hold a table for you." },
+    { kw:['park','valet'], a:"Yes, we offer valet parking so you can skip the hassle." },
+    { kw:['price','cost','expensive','cheap'], a:"Prices are fair for the portions \u2014 exact pricing is on the menu in-cafe. Ask your server for today's specials." },
+    { kw:['contact','phone','number','call'], a:"You can reach us directly at +91 77998 44644." },
+    { kw:['rating','review','good','recommend'], a:"We're rated 4.5\u2605 from over 1,300 Google reviews \u2014 guests especially love the desserts and the relaxed vibe." },
+    { kw:['hi','hello','hey'], a:"Hey there! 🌸 Ask me about our hours, menu, location or how to reserve a table." },
+    { kw:['thank'], a:"Anytime! See you at Coffee and Crisps soon ☕" }
+  ];
+  var fallback = "I don't have that detail handy \u2014 the best way to find out is to call us at +91 77998 44644.";
+
+  function matchIntent(text){
+    text = text.toLowerCase();
+    for (var i=0;i<intents.length;i++){
+      for (var j=0;j<intents[i].kw.length;j++){
+        if (text.indexOf(intents[i].kw[j]) !== -1) return intents[i].a;
+      }
+    }
+    return fallback;
+  }
+
+  function addMsg(text, who){
+    var m = document.createElement('div');
+    m.className = 'msg ' + who;
+    m.textContent = text;
+    body.appendChild(m);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function botReply(userText){
+    var typing = document.createElement('div');
+    typing.className = 'msg bot typing';
+    typing.innerHTML = '<span></span><span></span><span></span>';
+    body.appendChild(typing);
+    body.scrollTop = body.scrollHeight;
+    setTimeout(function(){
+      typing.remove();
+      addMsg(matchIntent(userText), 'bot');
+    }, reduceMotion ? 50 : 550);
+  }
+
+  function handleSend(){
+    var val = input.value.trim();
+    if (!val) return;
+    addMsg(val, 'user');
+    input.value = '';
+    botReply(val);
+  }
+
+  sendBtn.addEventListener('click', handleSend);
+  input.addEventListener('keydown', function(e){
+    if (e.key === 'Enter') handleSend();
+  });
+  chips.addEventListener('click', function(e){
+    var btn = e.target.closest('.chip');
+    if (!btn) return;
+    var map = { hours:'What are your hours?', menu:'What\'s on the menu?', location:'Where are you located?', reserve:'How do I reserve a table?' };
+    var q = map[btn.dataset.q];
+    addMsg(q, 'user');
+    botReply(q);
+  });
+
+})();
+</script>
+</body>
+</html>
