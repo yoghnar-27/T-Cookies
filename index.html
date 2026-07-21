@@ -4,27 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Coffee and Crisps Cafe | Saroornagar, Hyderabad</title>
-<meta name="description" content="Coffee and Crisps Cafe in Saroornagar, Hyderabad — a warm, garden-lit spot for coffee, comfort food and unhurried evenings. 4.5★ rated, open 11 AM – 10:45 PM daily.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='%23C97B87'%3E%3Cellipse cx='20' cy='10' rx='5' ry='9'/%3E%3Cellipse cx='20' cy='30' rx='5' ry='9'/%3E%3Cellipse cx='10' cy='20' rx='9' ry='5'/%3E%3Cellipse cx='30' cy='20' rx='9' ry='5'/%3E%3C/g%3E%3Ccircle cx='20' cy='20' r='5' fill='%23B8863B'/%3E%3C/svg%3E">
+<meta name="description" content="Coffee and Crisps Cafe in Saroornagar, Hyderabad — a warm, roasted coffee spot for fresh brews, crispy bites and unhurried evenings. 4.5★ rated, open 11 AM – 10:45 PM daily.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%23D9822B' d='M20 4 C10 4 4 13 4 24 C4 34 13 36 20 36 C27 36 36 34 36 24 C36 13 30 4 20 4 Z M20 8 C23 15 15 22 21 30 C24 33 20 36 20 36 C20 36 16 31 19 24 C22 17 18 11 20 8 Z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,560;0,9..144,650;1,9..144,440;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 
-/* ============================= TOKENS ============================= */
+/* ============================= TOKENS (COFFEE & CRISPS PALETTE) ============================= */
 :root{
-  --cream:       #FBF3EC;
-  --cream-deep:  #F2E4D6;
-  --espresso:    #2B1B14;
-  --espresso-70: #4A342A;
-  --espresso-45: #8A7367;
-  --rose:        #C97B87;
-  --rose-deep:   #A85C6B;
-  --rose-light:  #E8B4BC;
-  --rose-pale:   #F6DEE1;
-  --sage:        #7C8B6F;
-  --gold:        #B8863B;
-  --paper:       #FFFDFB;
+  --cream:       #FAF3EB;
+  --cream-deep:  #F2E5D5;
+  --espresso:    #2A160E;
+  --espresso-70: #482B1D;
+  --espresso-45: #7D5844;
+  --amber:       #D9822B;
+  --amber-deep:  #B3641B;
+  --amber-light: #F2A950;
+  --amber-pale:  #FBF0E0;
+  --mocha:       #8B5A2B;
+  --gold:        #E59837;
+  --paper:       #FFFDF9;
+  --sage:        #6B7A5E;
 
   --font-display: 'Fraunces', serif;
   --font-body: 'Manrope', sans-serif;
@@ -42,8 +43,8 @@
   --radius-lg: 32px;
   --radius-pill: 999px;
 
-  --shadow-soft: 0 20px 45px -24px rgba(43,27,20,0.35);
-  --shadow-lift: 0 30px 60px -28px rgba(43,27,20,0.45);
+  --shadow-soft: 0 20px 45px -24px rgba(42,22,14,0.35);
+  --shadow-lift: 0 30px 60px -28px rgba(42,22,14,0.45);
 
   --ease: cubic-bezier(.22,.61,.36,1);
 }
@@ -80,18 +81,18 @@ button{ font-family: inherit; }
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--rose-deep);
+  color: var(--amber-deep);
   display:flex; align-items:center; gap:0.6em;
 }
-.eyebrow::before{ content:''; width:22px; height:1.5px; background: var(--rose-deep); display:inline-block; }
+.eyebrow::before{ content:''; width:22px; height:1.5px; background: var(--amber-deep); display:inline-block; }
 
 .section-head{ max-width: 620px; margin-bottom: var(--space-5); }
 .section-head h2{ font-size: clamp(2rem, 3.6vw, 2.85rem); margin-top: 0.5em; line-height: 1.08; }
 .section-head p{ margin-top: 1em; color: var(--espresso-45); font-size: 1.05rem; }
 
 .divider{ display:flex; align-items:center; justify-content:center; gap: var(--space-2); margin: 0 auto; width: 100%; max-width: 220px; }
-.divider::before,.divider::after{ content:''; height:1px; flex:1; background: var(--rose-light); }
-.divider svg{ width:16px; height:16px; flex-shrink:0; color: var(--rose); }
+.divider::before,.divider::after{ content:''; height:1px; flex:1; background: var(--amber-light); opacity: 0.4; }
+.divider svg{ width:18px; height:18px; flex-shrink:0; color: var(--amber); }
 
 /* buttons */
 .btn{
@@ -106,45 +107,45 @@ button{ font-family: inherit; }
   white-space: nowrap;
 }
 .btn-primary{ background: var(--espresso); color: var(--cream); box-shadow: var(--shadow-soft); }
-.btn-primary:hover{ transform: translateY(-2px); box-shadow: var(--shadow-lift); }
+.btn-primary:hover{ transform: translateY(-2px); box-shadow: var(--shadow-lift); background: #381E13; }
 .btn-ghost{ background: transparent; color: var(--espresso); border-color: var(--espresso-45); }
 .btn-ghost:hover{ background: var(--espresso); color: var(--cream); border-color: var(--espresso); }
-.btn-rose{ background: var(--rose); color: var(--paper); box-shadow: 0 16px 30px -16px rgba(169,92,107,.6); }
-.btn-rose:hover{ transform: translateY(-2px); background: var(--rose-deep); }
+.btn-rose, .btn-amber{ background: var(--amber); color: var(--paper); box-shadow: 0 16px 30px -16px rgba(217,130,43,.6); }
+.btn-rose:hover, .btn-amber:hover{ transform: translateY(-2px); background: var(--amber-deep); }
 
-/* ============================= PETAL LAYER ============================= */
+/* ============================= COFFEE BEAN SHOWER ============================= */
 #petalLayer{
   position: fixed; inset:0; pointer-events:none; z-index: 5; overflow:hidden;
 }
 .petal{
   position:absolute; top:-8vh; will-change: transform, opacity;
-  animation-name: petal-fall; animation-timing-function: linear; animation-fill-mode: forwards;
+  animation-name: bean-fall; animation-timing-function: linear; animation-fill-mode: forwards;
   opacity:.85;
 }
-.petal svg{ width:100%; height:100%; display:block; }
-@keyframes petal-fall{
+.petal svg{ width:100%; height:100%; display:block; filter: drop-shadow(0 2px 5px rgba(42,22,14,0.15)); }
+@keyframes bean-fall{
   0%   { transform: translate(0,0) rotate(0deg); opacity:0; }
   6%   { opacity:.85; }
-  92%  { opacity:.7; }
+  92%  { opacity:.75; }
   100% { transform: translate(var(--drift,40px), 118vh) rotate(var(--spin,340deg)); opacity:0; }
 }
 
-/* ============================= CURSOR FLOWER ============================= */
+/* ============================= CURSOR (COFFEE BEAN) ============================= */
 .flower-cursor{
-  position:fixed; top:0; left:0; width:26px; height:26px; pointer-events:none; z-index: 9999;
+  position:fixed; top:0; left:0; width:28px; height:28px; pointer-events:none; z-index: 9999;
   transform: translate3d(-50px,-50px,0) scale(.6) rotate(0deg);
   opacity:0; transition: opacity .3s ease;
 }
-.flower-cursor svg{ width:100%; height:100%; filter: drop-shadow(0 4px 8px rgba(43,27,20,.25)); }
+.flower-cursor svg{ width:100%; height:100%; filter: drop-shadow(0 4px 8px rgba(42,22,14,.35)); }
 body.has-flower-cursor{ cursor:none; }
 body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
 .petal-spark{
-  position:fixed; top:0; left:0; width:10px; height:10px; pointer-events:none; z-index:9998;
+  position:fixed; top:0; left:0; width:12px; height:12px; pointer-events:none; z-index:9998;
   animation: spark-fade .75s var(--ease) forwards;
 }
 .petal-spark svg{ width:100%; height:100%; }
 @keyframes spark-fade{
-  0%{ opacity:.75; transform: translate(-50%,-50%) scale(1) rotate(0deg); }
+  0%{ opacity:.85; transform: translate(-50%,-50%) scale(1) rotate(0deg); }
   100%{ opacity:0; transform: translate(-50%,-50%) scale(.3) rotate(70deg) translateY(14px); }
 }
 
@@ -153,19 +154,19 @@ body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
   position: sticky; top:0; z-index: 500;
   display:flex; align-items:center; justify-content:space-between;
   padding: 1.1rem var(--space-3);
-  background: rgba(251,243,236,0.7);
+  background: rgba(250,243,235,0.82);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid transparent;
   transition: border-color .4s ease, box-shadow .4s ease, padding .4s ease;
 }
-.nav.scrolled{ border-color: rgba(43,27,20,.08); box-shadow: 0 12px 30px -24px rgba(43,27,20,.4); padding: 0.75rem var(--space-3); }
+.nav.scrolled{ border-color: rgba(42,22,14,.08); box-shadow: 0 12px 30px -24px rgba(42,22,14,.4); padding: 0.75rem var(--space-3); }
 .nav-logo{ font-family: var(--font-display); font-weight:650; font-size:1.25rem; color: var(--espresso); display:flex; align-items:center; gap:0.5em; }
-.nav-logo svg{ width:22px; height:22px; color: var(--rose); }
-.nav-logo em{ color: var(--rose-deep); font-style: italic; }
+.nav-logo svg{ width:24px; height:24px; color: var(--amber); }
+.nav-logo em{ color: var(--amber-deep); font-style: italic; }
 .nav-links{ display:flex; align-items:center; gap: var(--space-4); }
 .nav-links a{ font-size:0.92rem; font-weight:600; color: var(--espresso-70); position:relative; padding: 0.2em 0; }
-.nav-links a::after{ content:''; position:absolute; left:0; bottom:-3px; width:0; height:1.5px; background: var(--rose-deep); transition: width .3s var(--ease); }
+.nav-links a::after{ content:''; position:absolute; left:0; bottom:-3px; width:0; height:1.5px; background: var(--amber-deep); transition: width .3s var(--ease); }
 .nav-links a:hover::after{ width:100%; }
 .nav-cta{ display:flex; align-items:center; gap: var(--space-2); }
 .nav-burger{ display:none; background:none; border:none; padding: 0.4rem; }
@@ -181,12 +182,12 @@ body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
     position: fixed; top:0; right:0; height:100vh; width: min(78vw,320px);
     background: var(--paper); padding: 6.5rem var(--space-3) var(--space-3);
     transform: translateX(100%); transition: transform .45s var(--ease);
-    box-shadow: -30px 0 60px -30px rgba(43,27,20,.4); z-index: 600;
+    box-shadow: -30px 0 60px -30px rgba(42,22,14,.4); z-index: 600;
   }
   .nav-mobile.open{ transform: translateX(0); }
   .nav-mobile a{ font-family: var(--font-display); font-size:1.4rem; color: var(--espresso); }
   .nav-mobile .btn{ margin-top: 1rem; align-self:flex-start; }
-  .nav-scrim{ position:fixed; inset:0; background: rgba(43,27,20,.35); opacity:0; pointer-events:none; transition:opacity .4s ease; z-index:550; }
+  .nav-scrim{ position:fixed; inset:0; background: rgba(42,22,14,.35); opacity:0; pointer-events:none; transition:opacity .4s ease; z-index:550; }
   .nav-scrim.show{ opacity:1; pointer-events:auto; }
 }
 
@@ -197,8 +198,8 @@ body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
   display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
   padding: var(--space-6) var(--space-3) var(--space-5);
   background:
-    radial-gradient(ellipse 60% 50% at 18% 12%, rgba(232,180,188,.55), transparent 60%),
-    radial-gradient(ellipse 55% 45% at 85% 85%, rgba(124,139,111,.18), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 18% 12%, rgba(217,130,43,.22), transparent 60%),
+    radial-gradient(ellipse 55% 45% at 85% 85%, rgba(139,90,43,.16), transparent 60%),
     linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
   overflow:hidden;
 }
@@ -209,7 +210,7 @@ body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
   line-height: 0.98;
   letter-spacing: -0.01em;
 }
-.hero h1 em{ font-style: italic; color: var(--rose-deep); font-weight:500; }
+.hero h1 em{ font-style: italic; color: var(--amber-deep); font-weight:500; }
 .hero-sub{
   margin: var(--space-3) auto 0;
   max-width: 480px;
@@ -223,7 +224,7 @@ body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
   display:flex; gap: 0.6em; justify-content:center; flex-wrap:wrap;
 }
 .hero-stats span{ display:flex; align-items:center; gap:0.4em; }
-.hero-stats .dot{ color: var(--rose-light); }
+.hero-stats .dot{ color: var(--amber); }
 .hero-cta{ margin-top: var(--space-4); display:flex; gap: var(--space-2); justify-content:center; flex-wrap:wrap; }
 .hero-blooms{ position:absolute; inset:0; z-index:1; pointer-events:none; opacity:.9; }
 .hero-blooms svg{ position:absolute; }
@@ -233,7 +234,7 @@ body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
   display:flex; flex-direction:column; align-items:center; gap:0.5em;
   font-size:0.72rem; letter-spacing:.14em; text-transform:uppercase; color: var(--espresso-45); font-weight:700;
 }
-.scroll-cue .line{ width:1.5px; height:34px; background: linear-gradient(var(--rose-deep), transparent); animation: cue-pulse 2.2s ease-in-out infinite; }
+.scroll-cue .line{ width:1.5px; height:34px; background: linear-gradient(var(--amber-deep), transparent); animation: cue-pulse 2.2s ease-in-out infinite; }
 @keyframes cue-pulse{ 0%,100%{ opacity:.35; } 50%{ opacity:1; } }
 
 /* ============================= ABOUT ============================= */
@@ -243,15 +244,15 @@ body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
 .about-copy p:first-of-type{ margin-top: var(--space-3); }
 .about-list{ margin-top: var(--space-4); display:grid; gap: var(--space-2); }
 .about-list li{ display:flex; gap:0.8em; align-items:flex-start; font-size:0.98rem; color: var(--espresso-70); font-weight:600; }
-.about-list svg{ width:18px; height:18px; flex-shrink:0; margin-top:3px; color: var(--sage); }
+.about-list svg{ width:18px; height:18px; flex-shrink:0; margin-top:3px; color: var(--amber); }
 .about-panel{
   position:relative; aspect-ratio: 4/5; border-radius: var(--radius-lg);
-  background: linear-gradient(160deg, var(--rose-pale) 0%, var(--cream-deep) 55%, var(--rose-light) 100%);
+  background: linear-gradient(160deg, var(--amber-pale) 0%, var(--cream-deep) 55%, var(--amber-light) 100%);
   box-shadow: var(--shadow-lift);
   display:flex; align-items:center; justify-content:center;
   overflow:hidden;
 }
-.about-panel .ring{ position:absolute; border:1.5px solid rgba(43,27,20,.14); border-radius:50%; }
+.about-panel .ring{ position:absolute; border:1.5px solid rgba(42,22,14,.14); border-radius:50%; }
 .about-panel .ring.r1{ width:78%; height:78%; }
 .about-panel .ring.r2{ width:56%; height:56%; }
 .about-panel .cup{ width: 34%; color: var(--espresso); position:relative; z-index:2; }
@@ -274,14 +275,14 @@ body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
 .menu-card{
   background: var(--cream); border-radius: var(--radius-lg); padding: var(--space-4);
   transition: transform .4s var(--ease), box-shadow .4s var(--ease);
-  border: 1px solid rgba(43,27,20,.06);
+  border: 1px solid rgba(42,22,14,.06);
 }
 .menu-card:hover{ transform: translateY(-6px); box-shadow: var(--shadow-soft); }
-.menu-card .tag{ width:44px; height:44px; border-radius:50%; background: var(--rose-pale); display:flex; align-items:center; justify-content:center; color: var(--rose-deep); margin-bottom: var(--space-3); }
+.menu-card .tag{ width:44px; height:44px; border-radius:50%; background: var(--amber-pale); display:flex; align-items:center; justify-content:center; color: var(--amber-deep); margin-bottom: var(--space-3); }
 .menu-card .tag svg{ width:22px; height:22px; }
 .menu-card h3{ font-size:1.35rem; margin-bottom: var(--space-2); }
 .menu-card ul{ display:grid; gap: 0.7rem; }
-.menu-card li{ font-size:0.95rem; color: var(--espresso-70); padding-bottom:0.7rem; border-bottom: 1px dashed rgba(43,27,20,.12); }
+.menu-card li{ font-size:0.95rem; color: var(--espresso-70); padding-bottom:0.7rem; border-bottom: 1px dashed rgba(42,22,14,.12); }
 .menu-card li:last-child{ border-bottom:none; padding-bottom:0; }
 .menu-card li b{ display:block; color: var(--espresso); font-weight:700; }
 .menu-card li small{ color: var(--espresso-45); }
@@ -295,9 +296,9 @@ body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
 .amb-card{
   padding: var(--space-4) var(--space-3); border-radius: var(--radius-md);
   background: linear-gradient(160deg, var(--cream-deep), var(--cream));
-  text-align:center; border: 1px solid rgba(43,27,20,.06);
+  text-align:center; border: 1px solid rgba(42,22,14,.06);
 }
-.amb-card svg{ width:28px; height:28px; color: var(--rose-deep); margin: 0 auto var(--space-2); }
+.amb-card svg{ width:28px; height:28px; color: var(--amber-deep); margin: 0 auto var(--space-2); }
 .amb-card h4{ font-family: var(--font-display); font-size:1.05rem; color: var(--espresso); font-weight:600; }
 .amb-card p{ font-size:0.85rem; color: var(--espresso-45); margin-top:0.4em; }
 @media (max-width: 860px){ .ambience-grid{ grid-template-columns: repeat(2,1fr); } }
@@ -314,7 +315,7 @@ body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
 .review-card .stars{ color: var(--gold); letter-spacing:2px; font-size:0.9rem; }
 .review-card p{ margin-top: var(--space-2); font-size:0.95rem; color: var(--espresso-70); line-height:1.65; }
 .review-card .who{ margin-top: var(--space-3); font-size:0.82rem; font-weight:700; color: var(--espresso-45); text-transform:uppercase; letter-spacing:.06em; }
-.reviews-link{ display:block; text-align:center; margin-top: var(--space-4); font-weight:700; color: var(--rose-deep); font-size:0.95rem; }
+.reviews-link{ display:block; text-align:center; margin-top: var(--space-4); font-weight:700; color: var(--amber-deep); font-size:0.95rem; }
 @media (max-width: 900px){ .review-grid{ grid-template-columns:1fr; } }
 
 /* ============================= VISIT ============================= */
@@ -323,28 +324,28 @@ body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
 .visit-info h2{ font-size: clamp(2rem,3.4vw,2.7rem); margin-top:0.5em; }
 .visit-rows{ margin-top: var(--space-4); display:grid; gap: var(--space-3); }
 .visit-row{ display:flex; gap: var(--space-2); align-items:flex-start; }
-.visit-row svg{ width:20px; height:20px; color: var(--rose-deep); flex-shrink:0; margin-top:3px; }
+.visit-row svg{ width:20px; height:20px; color: var(--amber-deep); flex-shrink:0; margin-top:3px; }
 .visit-row b{ display:block; color: var(--espresso); font-size:0.95rem; }
 .visit-row span{ color: var(--espresso-45); font-size:0.92rem; }
 .hours-table{ margin-top:0.2em; display:grid; gap:0.25rem; }
 .hours-table div{ display:flex; justify-content:space-between; gap:1rem; max-width:260px; font-size:0.88rem; color: var(--espresso-45); }
 .visit-cta{ margin-top: var(--space-4); display:flex; gap: var(--space-2); flex-wrap:wrap; }
-.map-frame{ border-radius: var(--radius-lg); overflow:hidden; box-shadow: var(--shadow-lift); border: 1px solid rgba(43,27,20,.08); min-height:340px; }
+.map-frame{ border-radius: var(--radius-lg); overflow:hidden; box-shadow: var(--shadow-lift); border: 1px solid rgba(42,22,14,.08); min-height:340px; }
 .map-frame iframe{ width:100%; height:100%; min-height:340px; border:0; display:block; }
 @media (max-width: 900px){ .visit .wrap{ grid-template-columns:1fr; } }
 
 /* ============================= FOOTER ============================= */
-footer{ background: var(--espresso); color: rgba(251,243,236,.75); padding: var(--space-6) 0 var(--space-3); }
-.footer-grid{ display:grid; grid-template-columns: 1.3fr 1fr 1fr; gap: var(--space-5); padding-bottom: var(--space-5); border-bottom: 1px solid rgba(251,243,236,.12); }
+footer{ background: var(--espresso); color: rgba(250,243,235,.75); padding: var(--space-6) 0 var(--space-3); }
+.footer-grid{ display:grid; grid-template-columns: 1.3fr 1fr 1fr; gap: var(--space-5); padding-bottom: var(--space-5); border-bottom: 1px solid rgba(250,243,235,.12); }
 .footer-brand{ font-family: var(--font-display); font-size:1.5rem; color: var(--cream); display:flex; align-items:center; gap:0.5em; }
-.footer-brand svg{ width:22px; height:22px; color: var(--rose-light); }
-.footer-brand em{ color: var(--rose-light); font-style:italic; }
+.footer-brand svg{ width:24px; height:24px; color: var(--amber-light); }
+.footer-brand em{ color: var(--amber-light); font-style:italic; }
 .footer-tag{ margin-top: var(--space-2); font-size:0.92rem; max-width:280px; line-height:1.6; }
 footer h5{ color: var(--cream); font-size:0.82rem; letter-spacing:.1em; text-transform:uppercase; margin-bottom: var(--space-2); font-weight:700; }
 footer ul{ display:grid; gap:0.65rem; }
 footer a{ font-size:0.92rem; }
-footer a:hover{ color: var(--rose-light); }
-.footer-bottom{ padding-top: var(--space-3); display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.6rem; font-size:0.82rem; color: rgba(251,243,236,.5); }
+footer a:hover{ color: var(--amber-light); }
+.footer-bottom{ padding-top: var(--space-3); display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.6rem; font-size:0.82rem; color: rgba(250,243,235,.5); }
 @media (max-width: 760px){ .footer-grid{ grid-template-columns:1fr; gap: var(--space-4); } }
 
 /* ============================= CHATBOT ============================= */
@@ -361,19 +362,19 @@ footer a:hover{ color: var(--rose-light); }
 .chat-toggle .icon-close{ display:none; }
 .chat-toggle.open .icon-chat{ display:none; }
 .chat-toggle.open .icon-close{ display:block; }
-.chat-dot{ position:absolute; top:2px; right:2px; width:12px; height:12px; border-radius:50%; background: var(--rose); border:2px solid var(--cream); }
+.chat-dot{ position:absolute; top:2px; right:2px; width:12px; height:12px; border-radius:50%; background: var(--amber); border:2px solid var(--cream); }
 
 .chat-panel{
   position:absolute; bottom: 74px; right:0;
   width: min(360px, 88vw); height: min(480px, 68vh);
   background: var(--paper); border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lift); border: 1px solid rgba(43,27,20,.08);
+  box-shadow: var(--shadow-lift); border: 1px solid rgba(42,22,14,.08);
   display:flex; flex-direction:column; overflow:hidden;
   transform: translateY(16px) scale(.96); opacity:0; pointer-events:none;
   transition: transform .35s var(--ease), opacity .3s ease;
 }
 .chat-panel.open{ transform: translateY(0) scale(1); opacity:1; pointer-events:auto; }
-.chat-head{ background: linear-gradient(120deg, var(--rose-deep), var(--rose)); color: var(--paper); padding: 1.1rem 1.2rem; display:flex; align-items:center; gap:0.7em; }
+.chat-head{ background: linear-gradient(120deg, var(--amber-deep), var(--amber)); color: var(--paper); padding: 1.1rem 1.2rem; display:flex; align-items:center; gap:0.7em; }
 .chat-head svg{ width:22px; height:22px; }
 .chat-head b{ display:block; font-family: var(--font-display); font-size:1.02rem; font-weight:600; }
 .chat-head span{ display:block; font-size:0.72rem; opacity:.85; }
@@ -387,11 +388,11 @@ footer a:hover{ color: var(--rose-light); }
 .msg.typing span:nth-child(3){ animation-delay:.3s; }
 @keyframes typing-bounce{ 0%,60%,100%{ transform: translateY(0); opacity:.5; } 30%{ transform: translateY(-4px); opacity:1; } }
 .chat-chips{ display:flex; gap:0.5rem; flex-wrap:wrap; padding: 0.6rem 1rem; }
-.chip{ background: var(--rose-pale); color: var(--rose-deep); border:none; border-radius: var(--radius-pill); padding:0.4rem 0.85rem; font-size:0.76rem; font-weight:700; cursor:pointer; transition: background .25s ease; }
-.chip:hover{ background: var(--rose-light); }
-.chat-input-row{ display:flex; gap:0.5rem; padding: 0.8rem; border-top: 1px solid rgba(43,27,20,.08); }
-.chat-input-row input{ flex:1; border:1.5px solid rgba(43,27,20,.14); border-radius: var(--radius-pill); padding:0.65rem 1rem; font-size:0.88rem; font-family:inherit; background: var(--cream); color: var(--espresso); }
-.chat-input-row input:focus{ outline:none; border-color: var(--rose); }
+.chip{ background: var(--amber-pale); color: var(--amber-deep); border:none; border-radius: var(--radius-pill); padding:0.4rem 0.85rem; font-size:0.76rem; font-weight:700; cursor:pointer; transition: background .25s ease; }
+.chip:hover{ background: var(--amber-light); color: var(--espresso); }
+.chat-input-row{ display:flex; gap:0.5rem; padding: 0.8rem; border-top: 1px solid rgba(42,22,14,.08); }
+.chat-input-row input{ flex:1; border:1.5px solid rgba(42,22,14,.14); border-radius: var(--radius-pill); padding:0.65rem 1rem; font-size:0.88rem; font-family:inherit; background: var(--cream); color: var(--espresso); }
+.chat-input-row input:focus{ outline:none; border-color: var(--amber); }
 .chat-send{ width:40px; height:40px; border-radius:50%; border:none; background: var(--espresso); color: var(--cream); display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0; }
 .chat-send svg{ width:17px; height:17px; }
 
@@ -409,15 +410,15 @@ footer a:hover{ color: var(--rose-light); }
 
 <a href="#home" class="skip-link">Skip to content</a>
 
-<!-- ambient rose petals, purely decorative -->
+<!-- ambient coffee beans & golden crisp shower, purely decorative -->
 <div id="petalLayer" aria-hidden="true"></div>
 <div class="flower-cursor" id="flowerCursor" aria-hidden="true">
-  <svg viewBox="0 0 40 40"><g fill="var(--rose)"><ellipse cx="20" cy="10" rx="5" ry="9"/><ellipse cx="20" cy="30" rx="5" ry="9"/><ellipse cx="10" cy="20" rx="9" ry="5"/><ellipse cx="30" cy="20" rx="9" ry="5"/></g><circle cx="20" cy="20" r="5" fill="var(--gold)"/></svg>
+  <svg viewBox="0 0 40 40" fill="none"><path fill="var(--amber)" d="M20 4C10.5 4 4 12.5 4 23.5C4 33.5 12.5 36 20 36C27.5 36 36 33.5 36 23.5C36 12.5 29.5 4 20 4ZM20 8.5C23.2 15.5 15.5 22.5 21.5 30.5C23.8 33 20 35.5 20 35.5C20 35.5 16.2 30.5 19.2 23.5C22.2 16.5 17.8 11.5 20 8.5Z"/></svg>
 </div>
 
 <nav class="nav" id="siteNav">
   <a class="nav-logo" href="#home">
-    <svg viewBox="0 0 40 40" fill="none"><g fill="currentColor"><ellipse cx="20" cy="10" rx="4.5" ry="8"/><ellipse cx="20" cy="30" rx="4.5" ry="8"/><ellipse cx="10" cy="20" rx="8" ry="4.5"/><ellipse cx="30" cy="20" rx="8" ry="4.5"/></g><circle cx="20" cy="20" r="4.5" fill="var(--gold)"/></svg>
+    <svg viewBox="0 0 40 40" fill="none"><path fill="currentColor" d="M20 4C10.5 4 4 12.5 4 23.5C4 33.5 12.5 36 20 36C27.5 36 36 33.5 36 23.5C36 12.5 29.5 4 20 4ZM20 8.5C23.2 15.5 15.5 22.5 21.5 30.5C23.8 33 20 35.5 20 35.5C20 35.5 16.2 30.5 19.2 23.5C22.2 16.5 17.8 11.5 20 8.5Z"/></svg>
     Coffee <em>&amp;</em> Crisps
   </a>
   <div class="nav-links">
@@ -449,7 +450,7 @@ footer a:hover{ color: var(--rose-light); }
   <div class="hero-inner">
     <p class="eyebrow">Saroornagar &middot; Hyderabad</p>
     <h1>Coffee <span>&amp;</span> Crisps <em>Cafe</em></h1>
-    <p class="hero-sub">A petal-soft corner for slow mornings, long conversations and a menu that keeps regulars coming back.</p>
+    <p class="hero-sub">A warm roasted corner for slow mornings, rich artisan brews, crisp bites and long unhurried conversations.</p>
     <p class="hero-stats">
       <span>4.5<span class="dot">★</span> rated</span>
       <span class="dot">&bull;</span>
@@ -471,7 +472,7 @@ footer a:hover{ color: var(--rose-light); }
     <div class="about-copy">
       <p class="eyebrow">Our Story</p>
       <h2>Unhurried, by design</h2>
-      <p>Tucked into Road Number&nbsp;1 in Saroornagar, Coffee and Crisps has quietly become the neighbourhood's go-to for a cup that's actually good and a table nobody rushes you off. No loud playlists, no clatter &mdash; just warm light, comfortable seating and a menu built for lingering.</p>
+      <p>Tucked into Road Number&nbsp;1 in Saroornagar, Coffee and Crisps has quietly become the neighbourhood's go-to for a cup that's actually good and a table nobody rushes you off. No loud playlists, no clatter &mdash; just warm ambient light, comfortable seating and a menu built for lingering.</p>
       <p>Guests keep coming back for the same reasons: a kitchen that treats comfort food seriously, a room that photographs as good as it feels, and a team that remembers your order by the third visit.</p>
       <ul class="about-list">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Valet parking &amp; spotless washrooms</li>
@@ -536,7 +537,7 @@ footer a:hover{ color: var(--rose-light); }
 <!-- ============================= AMBIENCE ============================= -->
 <section class="ambience">
   <div class="wrap">
-    <div class="divider"><svg viewBox="0 0 40 40" fill="currentColor"><ellipse cx="20" cy="10" rx="4" ry="7"/><ellipse cx="20" cy="30" rx="4" ry="7"/><ellipse cx="10" cy="20" rx="7" ry="4"/><ellipse cx="30" cy="20" rx="7" ry="4"/></svg></div>
+    <div class="divider"><svg viewBox="0 0 40 40" fill="none"><path fill="currentColor" d="M20 4C10.5 4 4 12.5 4 23.5C4 33.5 12.5 36 20 36C27.5 36 36 33.5 36 23.5C36 12.5 29.5 4 20 4ZM20 8.5C23.2 15.5 15.5 22.5 21.5 30.5C23.8 33 20 35.5 20 35.5C20 35.5 16.2 30.5 19.2 23.5C22.2 16.5 17.8 11.5 20 8.5Z"/></svg></div>
     <div class="ambience-grid" style="margin-top: var(--space-5);">
       <div class="amb-card">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 17l3-9 3 9M6.5 13h3M13 17V8h4a3 3 0 010 6h-4"/></svg>
@@ -586,7 +587,7 @@ footer a:hover{ color: var(--rose-light); }
       </div>
       <div class="review-card">
         <div class="stars">★★★★★</div>
-        <p>Their hot chocolate brownie dessert is the kind you think about days later &mdash; rich, warm and properly indulgent. The whole space has a cozy, cute feel that's perfect for evenings.</p>
+        <p>Their hot chocolate brownie dessert is the kind you think about days later &mdash; rich, warm and properly indulgent. The whole space has a cozy feel that's perfect for evenings.</p>
         <div class="who">Google Review</div>
       </div>
       <div class="review-card">
@@ -625,7 +626,7 @@ footer a:hover{ color: var(--rose-light); }
         </div>
       </div>
       <div class="visit-cta">
-        <a class="btn btn-rose" href="https://maps.app.goo.gl/e9cRGW7v1hxA7aESA" target="_blank" rel="noopener">Get Directions</a>
+        <a class="btn btn-amber" href="https://maps.app.goo.gl/e9cRGW7v1hxA7aESA" target="_blank" rel="noopener">Get Directions</a>
         <a class="btn btn-ghost" href="tel:+917799844644">Call to Reserve</a>
       </div>
     </div>
@@ -641,7 +642,7 @@ footer a:hover{ color: var(--rose-light); }
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-          <svg viewBox="0 0 40 40" fill="none"><g fill="currentColor"><ellipse cx="20" cy="10" rx="4.5" ry="8"/><ellipse cx="20" cy="30" rx="4.5" ry="8"/><ellipse cx="10" cy="20" rx="8" ry="4.5"/><ellipse cx="30" cy="20" rx="8" ry="4.5"/></g><circle cx="20" cy="20" r="4.5" fill="var(--gold)"/></svg>
+          <svg viewBox="0 0 40 40" fill="none"><path fill="currentColor" d="M20 4C10.5 4 4 12.5 4 23.5C4 33.5 12.5 36 20 36C27.5 36 36 33.5 36 23.5C36 12.5 29.5 4 20 4ZM20 8.5C23.2 15.5 15.5 22.5 21.5 30.5C23.8 33 20 35.5 20 35.5C20 35.5 16.2 30.5 19.2 23.5C22.2 16.5 17.8 11.5 20 8.5Z"/></svg>
           Coffee <em>&amp;</em> Crisps
         </div>
         <p class="footer-tag">A warm, unhurried cafe in Saroornagar, Hyderabad &mdash; good coffee, honest food, no rush.</p>
@@ -666,7 +667,7 @@ footer a:hover{ color: var(--rose-light); }
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Coffee and Crisps Cafe. All rights reserved.</span>
-      <span>Crafted with 🌸 for slow mornings</span>
+      <span>Crafted with ☕ for cozy coffee lovers</span>
     </div>
   </div>
 </footer>
@@ -675,7 +676,7 @@ footer a:hover{ color: var(--rose-light); }
 <div class="chat-widget">
   <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Chat with Coffee and Crisps Cafe">
     <div class="chat-head">
-      <svg viewBox="0 0 40 40" fill="none"><g fill="currentColor"><ellipse cx="20" cy="10" rx="4.5" ry="8"/><ellipse cx="20" cy="30" rx="4.5" ry="8"/><ellipse cx="10" cy="20" rx="8" ry="4.5"/><ellipse cx="30" cy="20" rx="8" ry="4.5"/></g><circle cx="20" cy="20" r="4.5" fill="var(--gold)"/></svg>
+      <svg viewBox="0 0 40 40" fill="none"><path fill="currentColor" d="M20 4C10.5 4 4 12.5 4 23.5C4 33.5 12.5 36 20 36C27.5 36 36 33.5 36 23.5C36 12.5 29.5 4 20 4ZM20 8.5C23.2 15.5 15.5 22.5 21.5 30.5C23.8 33 20 35.5 20 35.5C20 35.5 16.2 30.5 19.2 23.5C22.2 16.5 17.8 11.5 20 8.5Z"/></svg>
       <div><b>Cafe Assistant</b><span>Usually replies in a moment</span></div>
     </div>
     <div class="chat-body" id="chatBody" aria-live="polite">
@@ -729,13 +730,13 @@ footer a:hover{ color: var(--rose-light); }
   navScrim.addEventListener('click', closeMobileNav);
   navMobile.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMobileNav); });
 
-  /* ---------------- ROSE PETAL SHOWER ---------------- */
+  /* ---------------- COFFEE BEAN & CRISP SHOWER ---------------- */
   var petalLayer = document.getElementById('petalLayer');
-  var petalPaths = [
-    'M50 2 C78 20 78 58 50 98 C22 58 22 20 50 2 Z',
-    'M50 4 C72 24 66 70 50 96 C34 70 28 24 50 4 Z'
+  var beanPaths = [
+    'M50 8 C25 8 10 28 10 52 C10 74 30 92 50 92 C70 92 90 74 90 52 C90 28 75 8 50 8 Z M50 16 C57 32 40 48 54 66 C60 74 50 82 50 82 C50 82 40 70 47 50 C54 34 44 24 50 16 Z',
+    'M50 10 C20 15 10 40 15 70 C20 90 55 95 80 80 C95 65 90 30 75 15 C60 5 35 8 50 10 Z'
   ];
-  var petalColors = ['#C97B87','#E8B4BC','#A85C6B','#F0C6CC'];
+  var beanColors = ['#8B5A2B', '#D9822B', '#2A160E', '#E59837', '#B3641B', '#F2A950'];
   var maxPetals = reduceMotion ? 5 : 16;
   var activePetals = 0;
 
@@ -744,13 +745,13 @@ footer a:hover{ color: var(--rose-light); }
     activePetals++;
     var el = document.createElement('div');
     el.className = 'petal';
-    var size = 10 + Math.random() * 14;
+    var size = 12 + Math.random() * 14;
     var startX = Math.random() * 100;
     var duration = reduceMotion ? 0 : 9 + Math.random() * 7;
     var drift = (Math.random() * 160 - 80) + 'px';
     var spin = Math.round(200 + Math.random() * 260) + 'deg';
-    var path = petalPaths[Math.floor(Math.random() * petalPaths.length)];
-    var color = petalColors[Math.floor(Math.random() * petalColors.length)];
+    var path = beanPaths[Math.floor(Math.random() * beanPaths.length)];
+    var color = beanColors[Math.floor(Math.random() * beanColors.length)];
 
     el.style.left = startX + 'vw';
     el.style.width = size + 'px';
@@ -774,7 +775,7 @@ footer a:hover{ color: var(--rose-light); }
     spawnPetal();
   }, spawnInterval);
 
-  /* ---------------- FLOWER CURSOR ---------------- */
+  /* ---------------- COFFEE BEAN CURSOR ---------------- */
   if (isFinePointer && !reduceMotion) {
     document.body.classList.add('has-flower-cursor');
     var cursor = document.getElementById('flowerCursor');
@@ -784,7 +785,7 @@ footer a:hover{ color: var(--rose-light); }
     function loop(){
       cx += (tx - cx) * 0.22;
       cy += (ty - cy) * 0.22;
-      cursor.style.transform = 'translate3d('+ (cx-13) +'px,'+ (cy-13) +'px,0) rotate('+ (cx*0.05) +'deg)';
+      cursor.style.transform = 'translate3d('+ (cx-14) +'px,'+ (cy-14) +'px,0) rotate('+ (cx*0.05) +'deg)';
       requestAnimationFrame(loop);
     }
     requestAnimationFrame(loop);
@@ -806,8 +807,8 @@ footer a:hover{ color: var(--rose-light); }
       s.className = 'petal-spark';
       s.style.left = x + 'px';
       s.style.top = y + 'px';
-      var color = petalColors[Math.floor(Math.random() * petalColors.length)];
-      s.innerHTML = '<svg viewBox="0 0 100 100"><path d="M50 4 C72 24 66 70 50 96 C34 70 28 24 50 4 Z" fill="'+color+'"/></svg>';
+      var color = beanColors[Math.floor(Math.random() * beanColors.length)];
+      s.innerHTML = '<svg viewBox="0 0 100 100"><path d="M50 8 C25 8 10 28 10 52 C10 74 30 92 50 92 C70 92 90 74 90 52 C90 28 75 8 50 8 Z M50 16 C57 32 40 48 54 66 C60 74 50 82 50 82 C50 82 40 70 47 50 C54 34 44 24 50 16 Z" fill="'+color+'"/></svg>';
       document.body.appendChild(s);
       setTimeout(function(){ s.remove(); }, 800);
     }
@@ -837,7 +838,7 @@ footer a:hover{ color: var(--rose-light); }
     { kw:['price','cost','expensive','cheap'], a:"Prices are fair for the portions \u2014 exact pricing is on the menu in-cafe. Ask your server for today's specials." },
     { kw:['contact','phone','number','call'], a:"You can reach us directly at +91 77998 44644." },
     { kw:['rating','review','good','recommend'], a:"We're rated 4.5\u2605 from over 1,300 Google reviews \u2014 guests especially love the desserts and the relaxed vibe." },
-    { kw:['hi','hello','hey'], a:"Hey there! 🌸 Ask me about our hours, menu, location or how to reserve a table." },
+    { kw:['hi','hello','hey'], a:"Hey there! ☕ Ask me about our hours, menu, location or how to reserve a table." },
     { kw:['thank'], a:"Anytime! See you at Coffee and Crisps soon ☕" }
   ];
   var fallback = "I don't have that detail handy \u2014 the best way to find out is to call us at +91 77998 44644.";
