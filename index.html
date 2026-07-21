@@ -336,6 +336,31 @@ body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
 .reviews-link{ display:block; text-align:center; margin-top: var(--space-4); font-weight:700; color: var(--amber-deep); font-size:0.95rem; }
 @media (max-width: 900px){ .review-grid{ grid-template-columns:1fr; } }
 
+/* ============================= FAQ SECTION ============================= */
+.faq{ padding: var(--space-7) 0; background: var(--paper); position:relative; }
+.faq-list{ max-width: 820px; margin: 0 auto; display: grid; gap: 1.1rem; }
+.faq-item{
+  background: var(--cream); border-radius: var(--radius-md);
+  border: 1px solid rgba(42,22,14,.08); overflow: hidden;
+  transition: box-shadow .35s var(--ease), border-color .35s ease, background .35s ease;
+}
+.faq-item[open]{ border-color: rgba(217,130,43,.4); box-shadow: var(--shadow-soft); background: var(--paper); }
+.faq-summary{
+  padding: 1.3rem 1.6rem; font-family: var(--font-display); font-size: 1.12rem;
+  font-weight: 600; color: var(--espresso); cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  user-select: none; list-style: none;
+}
+.faq-summary::-webkit-details-marker{ display: none; }
+.faq-icon{
+  width: 26px; height: 26px; border-radius: 50%; background: var(--amber-pale);
+  color: var(--amber-deep); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: transform .35s var(--ease), background .35s ease, color .35s ease;
+}
+.faq-icon svg{ width:14px; height:14px; stroke-width: 2.5; }
+.faq-item[open] .faq-icon{ transform: rotate(180deg); background: var(--amber); color: var(--paper); }
+.faq-content{ padding: 0 1.6rem 1.4rem; color: var(--espresso-45); font-size: 0.98rem; line-height: 1.68; border-top: 1px dashed rgba(42,22,14,.08); padding-top: 0.9rem; margin-top: -0.2rem; }
+
 /* ============================= VISIT ============================= */
 .visit{ padding: var(--space-7) 0; }
 .visit .wrap{ display:grid; grid-template-columns: 0.95fr 1.05fr; gap: var(--space-6); }
@@ -463,6 +488,7 @@ footer a:hover{ color: var(--amber-light); }
     <a href="#about">About</a>
     <a href="#menu">Menu</a>
     <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
     <a href="#visit">Visit</a>
   </div>
   <div class="nav-cta">
@@ -478,6 +504,7 @@ footer a:hover{ color: var(--amber-light); }
   <a href="#about">About</a>
   <a href="#menu">Menu</a>
   <a href="#reviews">Reviews</a>
+  <a href="#faq">FAQ</a>
   <a href="#visit">Visit</a>
   <a class="btn btn-primary" href="tel:+917799844644">Call to Reserve</a>
 </div>
@@ -657,6 +684,90 @@ footer a:hover{ color: var(--amber-light); }
   </div>
 </section>
 
+<!-- ============================= FAQ SECTION ============================= -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head" style="margin-left: auto; margin-right: auto; text-align: center;">
+      <p class="eyebrow" style="justify-content: center;">Good to Know</p>
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know about visiting Coffee and Crisps Cafe in Saroornagar.</p>
+    </div>
+    <div class="faq-list">
+
+      <details class="faq-item" open>
+        <summary class="faq-summary">
+          <span>What are the daily operating hours of the cafe?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="faq-content">
+          We are open every single day from <strong>11:00 AM to 10:45 PM</strong>, including weekends and public holidays.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-summary">
+          <span>Is valet parking available at Coffee and Crisps?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="faq-content">
+          Yes! We offer complimentary valet parking at our entrance so you can arrive stress-free without looking for parking along Road Number 1.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-summary">
+          <span>Do you have both vegetarian and non-vegetarian dishes?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="faq-content">
+          Yes, our kitchen serves a broad variety of vegetarian and non-vegetarian comfort food — from loaded cheese fries, peri-peri chicken crumbs, and wood-fired pizzas to artisanal coffees, fruit coolers, and rich desserts.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-summary">
+          <span>Do I need a reservation, or can I walk in?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="faq-content">
+          Walk-ins are always welcome! However, for weekend evenings or larger group gatherings, reserving ahead is recommended. You can call us directly at <strong><a href="tel:+917799844644" style="color:var(--amber-deep); text-decoration:underline;">+91 77998 44644</a></strong> to hold a table.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-summary">
+          <span>Is there outdoor seating available?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="faq-content">
+          Yes, we offer both a cozy indoor air-conditioned space and a relaxed, garden-lit outdoor seating area perfect for cool evening conversations.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-summary">
+          <span>What are the most recommended menu items by regulars?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="faq-content">
+          Guests consistently love our Signature Cappuccino, Loaded Cheese Fries, Peri-Peri Chicken Crumbs, Sizzling Chocolate Brownie, and Brownie Hot Chocolate.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-summary">
+          <span>Where is the cafe located exactly?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="faq-content">
+          We are located at <strong>Road Number 1, Doctors Colony, Saroornagar, Hyderabad, Telangana 500035</strong>. Tap 'Get Directions' in the Visit section for exact turn-by-turn map navigation.
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
 <!-- ============================= VISIT ============================= -->
 <section class="visit" id="visit">
   <div class="wrap">
@@ -727,6 +838,7 @@ footer a:hover{ color: var(--amber-light); }
           <li><a href="#about">About</a></li>
           <li><a href="#menu">Menu</a></li>
           <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#visit">Visit</a></li>
         </ul>
       </div>
