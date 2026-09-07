@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coffee and Cookies </title>
-<meta name="description" content="Coffee and Cookies a warm, roasted coffee spot for fresh brews, crispy bites and unhurried evenings. 4.5★ rated, open 11 AM – 10:45 PM daily.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%232A160E' stroke-width='4'%3E%3Cpath d='M 12 12 L 64 12 C 78 12, 88 22, 88 36 L 88 88 L 36 88 C 22 88, 12 78, 12 64 Z' stroke-width='5'/%3E%3Cline x1='12' y1='50' x2='88' y2='50'/%3E%3Cline x1='50' y1='12' x2='50' y2='88'/%3E%3Cpath d='M 20 42 L 31 22 L 42 42 Z'/%3E%3Cpath d='M 50 42 Q 59 34 61 24 Q 52 26 50 42 Z'/%3E%3Cpath d='M 50 42 Q 41 34 39 24 Q 48 26 50 42 Z'/%3E%3Cpath d='M 18 80 A 24 24 0 0 1 44 80'/%3E%3Cpath d='M 58 60 H 78 V 69 C 78 75 73 79 68 79 C 63 79 58 75 58 69 Z'/%3E%3C/svg%3E">
+<title>T &amp; Cookies | Artisanal Tea &amp; Gourmet Cookie Cafe | Hyderabad</title>
+<meta name="description" content="T &amp; Cookies Cafe in Green Park, Hyderabad — a cozy haven for artisanal leaf teas, fresh-baked gourmet cookies, warm infusions and unhurried conversations. Fictional portfolio demo website.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%232A160E' stroke-width='4'%3E%3Cpath d='M 20 40 L 70 40 L 64 72 C 62 82, 40 84, 26 72 Z' stroke-width='5'/%3E%3Cpath d='M 70 46 C 82 46, 84 62, 67 64' stroke-width='4'/%3E%3Cpath d='M 14 84 L 76 84' stroke-width='5'/%3E%3Ccircle cx='78' cy='34' r='14' stroke-width='4'/%3E%3Cpath d='M 32 30 Q 36 22 32 14' stroke-width='3'/%3E%3Cpath d='M 45 32 Q 49 24 45 16' stroke-width='3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,560;0,9..144,650;1,9..144,440;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 
-/* ============================= TOKENS (COFFEE & COOKIES PALETTE) ============================= */
+/* ============================= TOKENS (T & COOKIES PALETTE) ============================= */
 :root{
   --cream:       #FAF3EB;
   --cream-deep:  #F2E5D5;
@@ -92,7 +92,24 @@ button{ font-family: inherit; }
 
 .divider{ display:flex; align-items:center; justify-content:center; gap: var(--space-2); margin: 0 auto; width: 100%; max-width: 220px; }
 .divider::before,.divider::after{ content:''; height:1px; flex:1; background: var(--amber-light); opacity: 0.4; }
-.divider svg{ width:26px; height:26px; flex-shrink:0; color: var(--espresso); }
+.divider svg{ width:32px; height:32px; flex-shrink:0; color: var(--espresso); }
+
+/* Demo Banner */
+.demo-banner{
+  background: var(--espresso);
+  color: var(--amber-light);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.4rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.demo-banner span{ opacity: 0.6; }
 
 /* ============================= LOGO & TYPOGRAPHY STYLES ============================= */
 .cafe-grid-logo{
@@ -100,18 +117,6 @@ button{ font-family: inherit; }
   transition: transform .35s var(--ease);
 }
 .nav-logo:hover .cafe-grid-logo{ transform: scale(1.05) rotate(-2deg); }
-
-/* Inline Coffee Bean replacing "o" in Coffee */
-.bean-o{
-  display: inline-block;
-  height: 0.76em;
-  width: auto;
-  vertical-align: -0.02em;
-  margin: 0 -0.03em;
-  transform: rotate(-16deg);
-  color: var(--espresso);
-  fill: currentColor;
-}
 
 /* buttons */
 .btn{
@@ -132,24 +137,24 @@ button{ font-family: inherit; }
 .btn-rose, .btn-amber{ background: var(--amber); color: var(--paper); box-shadow: 0 16px 30px -16px rgba(217,130,43,.6); }
 .btn-rose:hover, .btn-amber:hover{ transform: translateY(-2px); background: var(--amber-deep); }
 
-/* ============================= COFFEE BEAN SHOWER ============================= */
+/* ============================= AMBIENT SHOWER ============================= */
 #petalLayer{
   position: fixed; inset:0; pointer-events:none; z-index: 5; overflow:hidden;
 }
 .petal{
   position:absolute; top:-8vh; will-change: transform, opacity;
-  animation-name: bean-fall; animation-timing-function: linear; animation-fill-mode: forwards;
+  animation-name: leaf-fall; animation-timing-function: linear; animation-fill-mode: forwards;
   opacity:.85;
 }
-.petal svg{ width:100%; height:100%; display:block; filter: drop-shadow(0 3px 6px rgba(42,22,14,0.25)); }
-@keyframes bean-fall{
+.petal svg{ width:100%; height:100%; display:block; filter: drop-shadow(0 3px 6px rgba(42,22,14,0.2)); }
+@keyframes leaf-fall{
   0%   { transform: translate(0,0) rotate(0deg); opacity:0; }
   6%   { opacity:.85; }
   92%  { opacity:.75; }
   100% { transform: translate(var(--drift,40px), 118vh) rotate(var(--spin,340deg)); opacity:0; }
 }
 
-/* ============================= COFFEE BEAN CURSOR ============================= */
+/* ============================= TEA LEAF CURSOR ============================= */
 .flower-cursor{
   position:fixed; top:0; left:0; width:28px; height:28px; pointer-events:none; z-index: 9999;
   transform: translate3d(-50px,-50px,0) scale(.6) rotate(0deg);
@@ -173,14 +178,14 @@ body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
   position: sticky; top:0; z-index: 500;
   display:flex; align-items:center; justify-content:space-between;
   padding: 1.1rem var(--space-3);
-  background: rgba(250,243,235,0.85);
+  background: rgba(250,243,235,0.88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid transparent;
   transition: border-color .4s ease, box-shadow .4s ease, padding .4s ease;
 }
 .nav.scrolled{ border-color: rgba(42,22,14,.08); box-shadow: 0 12px 30px -24px rgba(42,22,14,.4); padding: 0.75rem var(--space-3); }
-.nav-logo{ font-family: var(--font-display); font-weight:650; font-size:1.25rem; color: var(--espresso); display:flex; align-items:center; gap:0.6em; }
+.nav-logo{ font-family: var(--font-display); font-weight:650; font-size:1.35rem; color: var(--espresso); display:flex; align-items:center; gap:0.6em; }
 .nav-logo em{ color: var(--amber-deep); font-style: italic; }
 .nav-links{ display:flex; align-items:center; gap: var(--space-4); }
 .nav-links a{ font-size:0.92rem; font-weight:600; color: var(--espresso-70); position:relative; padding: 0.2em 0; }
@@ -231,7 +236,7 @@ body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
 .hero h1 em{ font-style: italic; color: var(--amber-deep); font-weight:500; }
 .hero-sub{
   margin: var(--space-3) auto 0;
-  max-width: 480px;
+  max-width: 520px;
   font-size: 1.15rem;
   color: var(--espresso-45);
 }
@@ -273,7 +278,7 @@ body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
 .about-panel .ring{ position:absolute; border:1.5px solid rgba(42,22,14,.14); border-radius:50%; }
 .about-panel .ring.r1{ width:78%; height:78%; }
 .about-panel .ring.r2{ width:56%; height:56%; }
-.about-panel .cup{ width: 34%; color: var(--espresso); position:relative; z-index:2; }
+.about-panel .cup{ width: 38%; color: var(--espresso); position:relative; z-index:2; }
 .about-badge{
   position:absolute; bottom: var(--space-3); left: var(--space-3);
   background: var(--paper); border-radius: var(--radius-md); padding: 1rem 1.3rem;
@@ -373,8 +378,14 @@ body.has-flower-cursor a, body.has-flower-cursor button{ cursor:none; }
 .hours-table{ margin-top:0.2em; display:grid; gap:0.25rem; }
 .hours-table div{ display:flex; justify-content:space-between; gap:1rem; max-width:260px; font-size:0.88rem; color: var(--espresso-45); }
 .visit-cta{ margin-top: var(--space-4); display:flex; gap: var(--space-2); flex-wrap:wrap; }
-.map-frame{ border-radius: var(--radius-lg); overflow:hidden; box-shadow: var(--shadow-lift); border: 1px solid rgba(42,22,14,.08); min-height:340px; }
-.map-frame iframe{ width:100%; height:100%; min-height:340px; border:0; display:block; }
+
+/* Demo Map Styling */
+.map-frame{ border-radius: var(--radius-lg); overflow:hidden; box-shadow: var(--shadow-lift); border: 1px solid rgba(42,22,14,.08); min-height:360px; }
+@keyframes floatPin {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
 @media (max-width: 900px){ .visit .wrap{ grid-template-columns:1fr; } }
 
 /* ============================= FOOTER ============================= */
@@ -382,9 +393,8 @@ footer{ background: var(--espresso); color: rgba(250,243,235,.75); padding: var(
 .footer-grid{ display:grid; grid-template-columns: 1.3fr 1fr 1fr; gap: var(--space-5); padding-bottom: var(--space-5); border-bottom: 1px solid rgba(250,243,235,.12); }
 .footer-brand{ font-family: var(--font-display); font-size:1.5rem; color: var(--cream); display:flex; align-items:center; gap:0.6em; }
 .footer-brand .cafe-grid-logo{ color: var(--amber-light); width: 38px; height: 38px; }
-.footer-brand .bean-o{ color: var(--cream); }
 .footer-brand em{ color: var(--amber-light); font-style:italic; }
-.footer-tag{ margin-top: var(--space-2); font-size:0.92rem; max-width:280px; line-height:1.6; }
+.footer-tag{ margin-top: var(--space-2); font-size:0.92rem; max-width:320px; line-height:1.6; }
 footer h5{ color: var(--cream); font-size:0.82rem; letter-spacing:.1em; text-transform:uppercase; margin-bottom: var(--space-2); font-weight:700; }
 footer ul{ display:grid; gap:0.65rem; }
 footer a{ font-size:0.92rem; }
@@ -452,37 +462,34 @@ footer a:hover{ color: var(--amber-light); }
 </head>
 <body>
 
+<div class="demo-banner">
+  Fictional Portfolio Demo Website &bull; <span>T &amp; Cookies Cafe</span>
+</div>
+
 <a href="#home" class="skip-link">Skip to content</a>
 
-<!-- ambient coffee bean shower, purely decorative -->
+<!-- ambient tea leaf shower, decorative -->
 <div id="petalLayer" aria-hidden="true"></div>
 
-<!-- Coffee Bean Cursor -->
+<!-- Tea Leaf Cursor -->
 <div class="flower-cursor" id="flowerCursor" aria-hidden="true">
-  <svg viewBox="0 0 32 40" fill="none"><path fill="#2A160E" d="M 16 2 C 8.5 2 3 9.5 3 20 C 3 30.5 8.5 38 16 38 C 23.5 38 29 30.5 29 20 C 29 9.5 24 2 16 2 Z M 16 7 C 19.5 13.5 12 19.5 17.5 27.5 C 19.5 30.5 16.5 32.5 16 32.5 C 15 32.5 11 27.5 13.2 21 C 15.4 14 11.8 9 16 7 Z"/></svg>
+  <svg viewBox="0 0 32 40" fill="none"><path fill="#2A160E" d="M 16 2 C 24 10 28 22 20 34 C 14 38 8 36 4 30 C -1 22 4 10 16 2 Z M 16 8 C 14 18 8 26 12 32 C 14 30 18 20 16 8 Z"/></svg>
 </div>
 
 <nav class="nav" id="siteNav">
   <a class="nav-logo" href="#home">
     <svg class="cafe-grid-logo" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3.5">
-      <path d="M 12 12 L 64 12 C 78 12, 88 22, 88 36 L 88 88 L 36 88 C 22 88, 12 78, 12 64 Z" stroke-width="4" stroke-linejoin="round" />
-      <line x1="12" y1="50" x2="88" y2="50" stroke-width="3" />
-      <line x1="50" y1="12" x2="50" y2="88" stroke-width="3" />
-      <path d="M 20 42 L 31 22 L 42 42 Z" stroke-width="3.5" stroke-linejoin="round" />
-      <circle cx="31" cy="30" r="2.5" fill="currentColor" stroke="none" />
-      <rect x="28.5" y="36" width="5" height="6" stroke-width="2.5" />
-      <path d="M 50 42 Q 59 34 61 24 Q 52 26 50 42 Z" stroke-width="3" fill="none" />
-      <path d="M 50 42 Q 41 34 39 24 Q 48 26 50 42 Z" stroke-width="3" fill="none" />
-      <path d="M 68 22 Q 78 26 74 34 Q 70 42 82 44" stroke-width="2.5" stroke-linecap="round" fill="none" />
-      <path d="M 72 16 A 14 14 0 0 1 84 28" stroke-width="2.5" stroke-linecap="round" fill="none" />
-      <path d="M 18 80 A 24 24 0 0 1 44 80" stroke-width="3" stroke-linecap="round" />
-      <path d="M 24 80 A 18 18 0 0 1 38 80" stroke-width="3" stroke-linecap="round" />
-      <path d="M 30 80 A 12 12 0 0 1 32 80" stroke-width="3" stroke-linecap="round" />
-      <path d="M 58 60 H 78 V 69 C 78 75 73 79 68 79 C 63 79 58 75 58 69 Z" stroke-width="3.5" stroke-linejoin="round" />
-      <path d="M 78 63 H 82 C 84.5 63 86 64.5 86 67 C 86 69.5 84.5 71 82 71 H 78" stroke-width="3" />
-      <line x1="62" y1="83" x2="74" y2="83" stroke-width="3" stroke-linecap="round" />
+      <path d="M 20 40 L 70 40 L 64 72 C 62 82, 40 84, 26 72 Z" stroke-width="4" stroke-linejoin="round" fill="none"/>
+      <path d="M 70 46 C 82 46, 84 62, 67 64" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      <path d="M 14 84 L 76 84" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="78" cy="34" r="14" stroke-width="3.5" fill="none"/>
+      <circle cx="74" cy="30" r="1.8" fill="currentColor" stroke="none"/>
+      <circle cx="82" cy="32" r="1.8" fill="currentColor" stroke="none"/>
+      <circle cx="76" cy="38" r="1.8" fill="currentColor" stroke="none"/>
+      <path d="M 32 30 Q 36 22 32 14" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M 45 32 Q 49 24 45 16" stroke-width="3" stroke-linecap="round" fill="none"/>
     </svg>
-    <span>C<svg class="bean-o" viewBox="0 0 24 32"><path fill="currentColor" d="M12 2C5.5 2 2 8 2 16C2 24 5.5 30 12 30C18.5 30 22 24 22 16C22 8 18.5 2 12 2ZM12 6C15.2 11.2 9.2 16.2 14.2 22.2C16.2 24.2 13 26 12 26C11 26 7.8 22 9.8 17C11.8 12 8.8 8 12 6Z"/></svg>ffee <em>&amp;</em> Crisps</span>
+    <span>T <em>&amp;</em> Cookies</span>
   </a>
   <div class="nav-links">
     <a href="#about">About</a>
@@ -492,7 +499,7 @@ footer a:hover{ color: var(--amber-light); }
     <a href="#visit">Visit</a>
   </div>
   <div class="nav-cta">
-    <a class="btn btn-ghost" href="tel:+917799844644">Call</a>
+    <a class="btn btn-ghost" href="tel:+919000012345">Call</a>
     <a class="btn btn-primary" href="#visit">Get Directions</a>
   </div>
   <button class="nav-burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
@@ -506,24 +513,25 @@ footer a:hover{ color: var(--amber-light); }
   <a href="#reviews">Reviews</a>
   <a href="#faq">FAQ</a>
   <a href="#visit">Visit</a>
-  <a class="btn btn-primary" href="tel:+917799844644">Call to Reserve</a>
+  <a class="btn btn-primary" href="tel:+919000012345">Call to Reserve</a>
 </div>
 
 <!-- ============================= HERO ============================= -->
 <header class="hero" id="home">
   <div class="hero-blooms" id="heroBlooms"></div>
   <div class="hero-inner">
-    <h1>C<svg class="bean-o" viewBox="0 0 24 32" style="font-size:1em; margin:0 -0.01em;"><path fill="currentColor" d="M12 2C5.5 2 2 8 2 16C2 24 5.5 30 12 30C18.5 30 22 24 22 16C22 8 18.5 2 12 2ZM12 6C15.2 11.2 9.2 16.2 14.2 22.2C16.2 24.2 13 26 12 26C11 26 7.8 22 9.8 17C11.8 12 8.8 8 12 6Z"/></svg>ffee <span>&amp;</span> Crisps <em>Cafe</em></h1>
-    <p class="hero-sub">A warm roasted corner for slow mornings, rich artisan brews, crisp bites and long unhurried conversations.</p>
+    <p class="eyebrow">Green Park &middot; Hyderabad</p>
+    <h1>T <span>&amp;</span> Cookies <em>Cafe</em></h1>
+    <p class="hero-sub">A warm roasted corner for slow afternoons, artisanal tea leaf infusions, fresh-baked gourmet cookies, and long unhurried conversations.</p>
     <p class="hero-stats">
-      <span>4.5<span class="dot">★</span> rated</span>
+      <span>4.9<span class="dot">★</span> rated</span>
       <span class="dot">&bull;</span>
-      <span>1,300+ Google reviews</span>
+      <span>Fictional Portfolio Demo</span>
       <span class="dot">&bull;</span>
-      <span>Open till 10:45 PM</span>
+      <span>Open daily till 11:00 PM</span>
     </p>
     <div class="hero-cta">
-      <a href="tel:+917799844644" class="btn btn-primary">Reserve a Table</a>
+      <a href="tel:+919000012345" class="btn btn-primary">Reserve a Table</a>
       <a href="#menu" class="btn btn-ghost">View Menu</a>
     </div>
   </div>
@@ -535,24 +543,25 @@ footer a:hover{ color: var(--amber-light); }
   <div class="wrap">
     <div class="about-copy">
       <p class="eyebrow">Our Story</p>
-      <h2>Unhurried, by design</h2>
-      <p> Coffee and Cookies has quietly become the neighbourhood's go-to for a cup that's actually good and a table nobody rushes you off. No loud playlists, no clatter &mdash; just warm ambient light, comfortable seating and a menu built for lingering.</p>
-      <p>Guests keep coming back for the same reasons: a kitchen that treats comfort food seriously, a room that photographs as good as it feels, and a team that remembers your order by the third visit.</p>
+      <h2>Handcrafted, by design</h2>
+      <p>Tucked into Lotus Avenue in Green Park, T &amp; Cookies is a fictional demo cafe crafted for lovers of fine tea leaf infusions and freshly baked gourmet cookies. No loud playlists, no clatter — just warm ambient light, comfortable seating and a menu built for lingering.</p>
+      <p>Guests love coming back for the same reasons: a kitchen that treats comfort food and baked goods seriously, a room that photographs as good as it feels, and a team that remembers your favorite order.</p>
       <ul class="about-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Valet parking &amp; spotless washrooms</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Calm, unhurried evenings &mdash; even on weekends</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Generous portions, attentive service</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Complimentary valet parking &amp; spotless spaces</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Calm, unhurried evenings &mdash; perfect for work or catchups</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Fresh-baked warm cookies &amp; artisanal tea pairings</li>
       </ul>
     </div>
     <div class="about-panel">
       <div class="ring r1"></div>
       <div class="ring r2"></div>
       <svg class="cup" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5">
-        <path d="M20 38h50v22a20 20 0 01-20 20H40a20 20 0 01-20-20V38z" stroke-linejoin="round"/>
-        <path d="M70 44h6a10 10 0 010 20h-6" />
+        <path d="M20 40h50v22a20 20 0 01-20 20H40a20 20 0 01-20-20V40z" stroke-linejoin="round"/>
+        <path d="M70 46h6a10 10 0 010 20h-6" />
         <path d="M30 30c2-6 8-6 10 0M46 30c2-6 8-6 10 0" stroke-linecap="round"/>
+        <circle cx="82" cy="30" r="10" stroke-width="2"/>
       </svg>
-      <div class="about-badge">4.5<span>Google rating</span></div>
+      <div class="about-badge">4.9<span>Demo rating</span></div>
     </div>
   </div>
 </section>
@@ -561,40 +570,46 @@ footer a:hover{ color: var(--amber-light); }
 <section class="menu" id="menu">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">What's Brewing</p>
+      <p class="eyebrow">What's Brewing &amp; Baking</p>
       <h2>A menu people talk about</h2>
-      <p>The dishes guests mention again and again &mdash; grouped so you can build your own order.</p>
+      <p>Curated teas, fresh gourmet cookies, and light savory bites &mdash; crafted for pairings.</p>
     </div>
     <div class="menu-grid">
       <div class="menu-card">
-        <div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h14v5a5 5 0 01-5 5H8a5 5 0 01-5-5V8z"/><path d="M17 10h1.5a2.5 2.5 0 010 5H17" /><path d="M7 4c.5-1.5 2-1.5 2 0M11 4c.5-1.5 2-1.5 2 0" stroke-linecap="round"/></svg></div>
-        <h3>Coffee &amp; Coolers</h3>
+        <div class="tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8h1a4 4 0 110 8h-1M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8zM6 2v4M10 2v4M14 2v4"/></svg>
+        </div>
+        <h3>Artisanal Teas &amp; Brews</h3>
         <ul>
-          <li><b>Signature Cappuccino</b><small>The house order &mdash; smooth, never bitter</small></li>
-          <li><b>Iced Peach Cooler</b><small>Bright, fruity, built for warm afternoons</small></li>
-          <li><b>Classic Milkshakes</b><small>Thick, generous, old-school good</small></li>
+          <li><b>Imperial Jasmine Pearls</b><small>Hand-rolled green tea, fragrant jasmine blossoms</small></li>
+          <li><b>Masala Chai Supreme</b><small>Steeped Assam black tea, fresh spices, whole milk</small></li>
+          <li><b>Iced Peach &amp; Hibiscus Cooler</b><small>Refreshing herbal infusion, natural peach nectar</small></li>
         </ul>
       </div>
       <div class="menu-card">
-        <div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11h16l-1.5 7a2 2 0 01-2 1.6H7.5A2 2 0 015.5 18L4 11z"/><path d="M6 11a6 6 0 0112 0" stroke-linecap="round"/></svg></div>
-        <h3>Small Plates &amp; Mains</h3>
+        <div class="tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="9" r="1.5" fill="currentColor"/><circle cx="15" cy="10" r="1.5" fill="currentColor"/><circle cx="12" cy="15" r="1.5" fill="currentColor"/><circle cx="8" cy="14" r="1" fill="currentColor"/></svg>
+        </div>
+        <h3>Gourmet Cookies</h3>
         <ul>
-          <li><b>Loaded Cheese Fries</b><small>Crisp fries, generous cheese, fresh salad on the side</small></li>
-          <li><b>Peri-Peri Chicken Crumbs</b><small>Crispy bites, peri-peri kick, house mayo dip</small></li>
-          <li><b>Wood-fired Pizza &amp; Pasta</b><small>Comfort-food classics done properly</small></li>
+          <li><b>Choco-Chip Sea Salt Cookie</b><small>Warm gooey center, Belgian dark chocolate, Maldon salt</small></li>
+          <li><b>Pistachio Rose Shortbread</b><small>Crisp butter biscuit, roasted pistachios, dried rose petals</small></li>
+          <li><b>Double Dark Fudge Cookie</b><small>Rich cocoa dough, melted chocolate chunks</small></li>
         </ul>
       </div>
       <div class="menu-card">
-        <div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Sweet Endings</h3>
+        <div class="tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Savories &amp; Treats</h3>
         <ul>
-          <li><b>Sizzling Chocolate Brownie</b><small>Warm, gooey, the table's favourite</small></li>
-          <li><b>Brownie Hot Chocolate</b><small>Guests call it "melts in your mouth"</small></li>
-          <li><b>Mango Kunafa</b><small>Seasonal, syrup-soaked, shareable</small></li>
+          <li><b>Warm Butter Croissants &amp; Toasties</b><small>Flaky golden crust, melted cheese &amp; herbs</small></li>
+          <li><b>Matcha &amp; White Choco Tart</b><small>Ceremonial grade matcha cream, buttery shell</small></li>
+          <li><b>Warm Cookie Affogato</b><small>Chilled tea ice cream, espresso splash, cookie crumble</small></li>
         </ul>
       </div>
     </div>
-    <p class="menu-note">Full menu &amp; current prices available in-cafe &mdash; ask your server or call ahead.</p>
+    <p class="menu-note">Full menu &amp; daily specials available in-cafe &mdash; ask your server or call ahead.</p>
   </div>
 </section>
 
@@ -603,22 +618,12 @@ footer a:hover{ color: var(--amber-light); }
   <div class="wrap">
     <div class="divider">
       <svg class="cafe-grid-logo" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3.5">
-        <path d="M 12 12 L 64 12 C 78 12, 88 22, 88 36 L 88 88 L 36 88 C 22 88, 12 78, 12 64 Z" stroke-width="4" stroke-linejoin="round" />
-        <line x1="12" y1="50" x2="88" y2="50" stroke-width="3" />
-        <line x1="50" y1="12" x2="50" y2="88" stroke-width="3" />
-        <path d="M 20 42 L 31 22 L 42 42 Z" stroke-width="3.5" stroke-linejoin="round" />
-        <circle cx="31" cy="30" r="2.5" fill="currentColor" stroke="none" />
-        <rect x="28.5" y="36" width="5" height="6" stroke-width="2.5" />
-        <path d="M 50 42 Q 59 34 61 24 Q 52 26 50 42 Z" stroke-width="3" fill="none" />
-        <path d="M 50 42 Q 41 34 39 24 Q 48 26 50 42 Z" stroke-width="3" fill="none" />
-        <path d="M 68 22 Q 78 26 74 34 Q 70 42 82 44" stroke-width="2.5" stroke-linecap="round" fill="none" />
-        <path d="M 72 16 A 14 14 0 0 1 84 28" stroke-width="2.5" stroke-linecap="round" fill="none" />
-        <path d="M 18 80 A 24 24 0 0 1 44 80" stroke-width="3" stroke-linecap="round" />
-        <path d="M 24 80 A 18 18 0 0 1 38 80" stroke-width="3" stroke-linecap="round" />
-        <path d="M 30 80 A 12 12 0 0 1 32 80" stroke-width="3" stroke-linecap="round" />
-        <path d="M 58 60 H 78 V 69 C 78 75 73 79 68 79 C 63 79 58 75 58 69 Z" stroke-width="3.5" stroke-linejoin="round" />
-        <path d="M 78 63 H 82 C 84.5 63 86 64.5 86 67 C 86 69.5 84.5 71 82 71 H 78" stroke-width="3" />
-        <line x1="62" y1="83" x2="74" y2="83" stroke-width="3" stroke-linecap="round" />
+        <path d="M 20 40 L 70 40 L 64 72 C 62 82, 40 84, 26 72 Z" stroke-width="4" stroke-linejoin="round" fill="none"/>
+        <path d="M 70 46 C 82 46, 84 62, 67 64" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M 14 84 L 76 84" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="78" cy="34" r="14" stroke-width="3.5" fill="none"/>
+        <path d="M 32 30 Q 36 22 32 14" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M 45 32 Q 49 24 45 16" stroke-width="3" stroke-linecap="round" fill="none"/>
       </svg>
     </div>
     <div class="ambience-grid" style="margin-top: var(--space-5);">
@@ -634,13 +639,13 @@ footer a:hover{ color: var(--amber-light); }
       </div>
       <div class="amb-card">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="4"/></svg>
-        <h4>Peaceful Evenings</h4>
-        <p>Low noise, easy conversation</p>
+        <h4>Peaceful Atmosphere</h4>
+        <p>Cozy ambient light, easy conversation</p>
       </div>
       <div class="amb-card">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 4v16M4 10h4" /></svg>
-        <h4>Clean, Comfortable</h4>
-        <p>Spotless washrooms, cared-for space</p>
+        <h4>Clean &amp; Comfortable</h4>
+        <p>Spotless seating &amp; serene space</p>
       </div>
     </div>
   </div>
@@ -655,31 +660,31 @@ footer a:hover{ color: var(--amber-light); }
         <h2 style="font-size:clamp(2rem,3.4vw,2.7rem); margin-top:0.5em;">What guests are saying</h2>
       </div>
       <div class="rating-badge">
-        <div class="num">4.5</div>
+        <div class="num">4.9</div>
         <div>
           <div class="stars">★★★★★</div>
-          <div class="meta">1,362 Google reviews</div>
+          <div class="meta">1,240+ Demo Reviews</div>
         </div>
       </div>
     </div>
     <div class="review-grid">
       <div class="review-card">
         <div class="stars">★★★★★</div>
-        <p>The fries and cheese board hit the spot, and the coffee was properly good. Valet parking and clean washrooms made it an easy, comfortable stop for a quick bite.</p>
-        <div class="who">Google Review</div>
+        <p>The Pistachio Rose Shortbread paired with their Masala Chai Supreme hit the spot! Valet parking and comfortable seating made it a super easy, relaxing afternoon stop.</p>
+        <div class="who">Portfolio Demo Review</div>
       </div>
       <div class="review-card">
         <div class="stars">★★★★★</div>
-        <p>Their hot chocolate brownie dessert is the kind you think about days later &mdash; rich, warm and properly indulgent. The whole space has a cozy feel that's perfect for evenings.</p>
-        <div class="who">Google Review</div>
+        <p>Their warm Choco-Chip Sea Salt cookie is the kind of dessert you dream about &mdash; rich, gooey and balanced. The space has a gorgeous warm aesthetic.</p>
+        <div class="who">Portfolio Demo Review</div>
       </div>
       <div class="review-card">
-        <div class="stars">★★★★☆</div>
-        <p>Warm welcome from the staff, seriously good pizza and coffee, and a relaxed atmosphere that makes you want to stay a while longer than planned.</p>
-        <div class="who">Google Review</div>
+        <div class="stars">★★★★★</div>
+        <p>Warm welcome from the staff, exceptional leaf tea blends, and a serene ambiance that makes you want to stay a while longer than planned.</p>
+        <div class="who">Portfolio Demo Review</div>
       </div>
     </div>
-    <a class="reviews-link" href="https://maps.app.goo.gl/e9cRGW7v1hxA7aESA" target="_blank" rel="noopener">Read more reviews on Google Maps &rarr;</a>
+    <a class="reviews-link" href="#visit">Visit T &amp; Cookies Demo Location &rarr;</a>
   </div>
 </section>
 
@@ -689,7 +694,7 @@ footer a:hover{ color: var(--amber-light); }
     <div class="section-head" style="margin-left: auto; margin-right: auto; text-align: center;">
       <p class="eyebrow" style="justify-content: center;">Good to Know</p>
       <h2>Frequently Asked Questions</h2>
-      <p>Everything you need to know about visiting Coffee and Crisps Cafe in Saroornagar.</p>
+      <p>Everything you need to know about visiting T &amp; Cookies Cafe in Green Park.</p>
     </div>
     <div class="faq-list">
 
@@ -699,27 +704,27 @@ footer a:hover{ color: var(--amber-light); }
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </summary>
         <div class="faq-content">
-          We are open every single day from <strong>11:00 AM to 10:45 PM</strong>, including weekends and public holidays.
+          We are open every single day from <strong>10:00 AM to 11:00 PM</strong>, including weekends and public holidays.
         </div>
       </details>
 
       <details class="faq-item">
         <summary class="faq-summary">
-          <span>Is valet parking available at Coffee and Crisps?</span>
+          <span>Is valet parking available at T &amp; Cookies?</span>
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </summary>
         <div class="faq-content">
-          Yes! We offer complimentary valet parking at our entrance so you can arrive stress-free without looking for parking along Road Number 1.
+          Yes! We offer complimentary valet parking at our entrance so you can arrive stress-free without searching for parking on Lotus Avenue.
         </div>
       </details>
 
       <details class="faq-item">
         <summary class="faq-summary">
-          <span>Do you have both vegetarian and non-vegetarian dishes?</span>
+          <span>Do you serve both teas and food options?</span>
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </summary>
         <div class="faq-content">
-          Yes, our kitchen serves a broad variety of vegetarian and non-vegetarian comfort food — from loaded cheese fries, peri-peri chicken crumbs, and wood-fired pizzas to artisanal coffees, fruit coolers, and rich desserts.
+          Yes, our menu features artisanal teas, milk chai, iced coolers, gourmet fresh-baked cookies, croissants, butter toasties, and desserts.
         </div>
       </details>
 
@@ -729,27 +734,17 @@ footer a:hover{ color: var(--amber-light); }
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </summary>
         <div class="faq-content">
-          Walk-ins are always welcome! However, for weekend evenings or larger group gatherings, reserving ahead is recommended. You can call us directly at <strong><a href="tel:+917799844644" style="color:var(--amber-deep); text-decoration:underline;">+91 77998 44644</a></strong> to hold a table.
+          Walk-ins are always welcome! For weekend evenings or group gatherings, reserving ahead is recommended. Call us at <strong><a href="tel:+919000012345" style="color:var(--amber-deep); text-decoration:underline;">+91 90000 12345</a></strong> or email <strong><a href="mailto:hello@tandcookies.example" style="color:var(--amber-deep); text-decoration:underline;">hello@tandcookies.example</a></strong>.
         </div>
       </details>
 
       <details class="faq-item">
         <summary class="faq-summary">
-          <span>Is there outdoor seating available?</span>
+          <span>Is this a real cafe or a demo website?</span>
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </summary>
         <div class="faq-content">
-          Yes, we offer both a cozy indoor air-conditioned space and a relaxed, garden-lit outdoor seating area perfect for cool evening conversations.
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-summary">
-          <span>What are the most recommended menu items by regulars?</span>
-          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </summary>
-        <div class="faq-content">
-          Guests consistently love our Signature Cappuccino, Loaded Cheese Fries, Peri-Peri Chicken Crumbs, Sizzling Chocolate Brownie, and Brownie Hot Chocolate.
+          This is a <strong>fictional portfolio demo website</strong> for <strong>T &amp; Cookies</strong>. All location details, phone numbers, and reviews are purely demonstration placeholders.
         </div>
       </details>
 
@@ -759,7 +754,7 @@ footer a:hover{ color: var(--amber-light); }
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </summary>
         <div class="faq-content">
-          We are located at <strong>Road Number 1, Doctors Colony, Saroornagar, Hyderabad, Telangana 500035</strong>. Tap 'Get Directions' in the Visit section for exact turn-by-turn map navigation.
+          Fictional address: <strong>12, Lotus Avenue, Green Park, Hyderabad, Telangana 500081, India</strong>.
         </div>
       </details>
 
@@ -776,29 +771,60 @@ footer a:hover{ color: var(--amber-light); }
       <div class="visit-rows">
         <div class="visit-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 5.5-8 12-8 12s-8-6.5-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <div><b>Address</b><span>Rd Number 1, Saroornagar, Doctors Colony, Hyderabad, Telangana 500035</span></div>
+          <div><b>Address</b><span>12, Lotus Avenue, Green Park, Hyderabad, Telangana 500081, India</span></div>
         </div>
         <div class="visit-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8 9.7a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg>
-          <div><b>Phone</b><span><a href="tel:+917799844644">+91 77998 44644</a></span></div>
+          <div><b>Phone</b><span><a href="tel:+919000012345">+91 90000 12345</a></span></div>
+        </div>
+        <div class="visit-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div><b>Email</b><span><a href="mailto:hello@tandcookies.example">hello@tandcookies.example</a></span></div>
         </div>
         <div class="visit-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2" stroke-linecap="round"/></svg>
           <div>
             <b>Hours</b>
             <div class="hours-table">
-              <div><span>Monday &ndash; Sunday</span><span>11:00 AM &ndash; 10:45 PM</span></div>
+              <div><span>Monday &ndash; Sunday</span><span>10:00 AM &ndash; 11:00 PM</span></div>
             </div>
           </div>
         </div>
       </div>
       <div class="visit-cta">
-        <a class="btn btn-amber" href="https://maps.app.goo.gl/e9cRGW7v1hxA7aESA" target="_blank" rel="noopener">Get Directions</a>
-        <a class="btn btn-ghost" href="tel:+917799844644">Call to Reserve</a>
+        <a class="btn btn-amber" href="#visit">Demo Location</a>
+        <a class="btn btn-ghost" href="tel:+919000012345">Call to Reserve</a>
       </div>
     </div>
     <div class="map-frame">
-      <iframe src="https://www.google.com/maps?q=Coffee+and+Crisps+Cafe,+Rd+Number+1,+Saroornagar,+Hyderabad&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Coffee and Crisps Cafe location map"></iframe>
+      <div style="background: linear-gradient(135deg, #2A160E 0%, #3D2115 100%); border-radius: var(--radius-lg); padding: 2.2rem; color: var(--cream); position: relative; overflow: hidden; min-height: 360px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(217,130,43,0.3); height: 100%;">
+        <!-- Fictional Map Overlay -->
+        <svg style="position: absolute; inset:0; width:100%; height:100%; opacity:0.12; pointer-events:none;" viewBox="0 0 400 300">
+          <path d="M 0 50 Q 100 80 200 40 T 400 60" stroke="#FAF3EB" stroke-width="12" fill="none"/>
+          <path d="M 50 0 Q 80 150 60 300" stroke="#FAF3EB" stroke-width="8" fill="none"/>
+          <path d="M 180 0 Q 220 180 200 300" stroke="#FAF3EB" stroke-width="16" fill="none"/>
+          <path d="M 0 200 Q 200 160 400 240" stroke="#FAF3EB" stroke-width="10" fill="none"/>
+          <circle cx="200" cy="140" r="40" stroke="#FAF3EB" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+        </svg>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; z-index: 2;">
+          <span style="background: var(--amber); color: var(--paper); padding: 0.35rem 0.9rem; border-radius: var(--radius-pill); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">Demo Location</span>
+          <span style="font-size: 0.8rem; opacity: 0.8; font-weight: 600;">Hyderabad, Telangana</span>
+        </div>
+
+        <div style="text-align: center; margin: 1.5rem 0; z-index: 2;">
+          <div style="display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; background: var(--amber); border-radius: 50%; box-shadow: 0 0 30px rgba(217,130,43,0.6); margin-bottom: 0.8rem; animation: floatPin 3s ease-in-out infinite;">
+            <svg style="width:32px; height:32px; color:var(--paper);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 10c0 5.5-8 12-8 12s-8-6.5-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 style="color: var(--cream); font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.3rem;">T &amp; Cookies Cafe</h3>
+          <p style="color: rgba(250,243,235,0.8); font-size: 0.92rem;">12, Lotus Avenue, Green Park, Hyderabad &bull; 500081</p>
+        </div>
+
+        <div style="background: rgba(250,243,235,0.08); backdrop-filter: blur(8px); padding: 0.8rem 1.2rem; border-radius: var(--radius-md); border: 1px solid rgba(250,243,235,0.12); display: flex; align-items: center; justify-content: space-between; z-index: 2;">
+          <span style="font-size: 0.82rem; color: rgba(250,243,235,0.75);">📍 Fictional Location &bull; Demo Website</span>
+          <span style="font-size: 0.82rem; color: var(--amber-light); font-weight: 700;">+91 90000 12345</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -810,26 +836,16 @@ footer a:hover{ color: var(--amber-light); }
       <div>
         <div class="footer-brand">
           <svg class="cafe-grid-logo" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3.5">
-            <path d="M 12 12 L 64 12 C 78 12, 88 22, 88 36 L 88 88 L 36 88 C 22 88, 12 78, 12 64 Z" stroke-width="4" stroke-linejoin="round" />
-            <line x1="12" y1="50" x2="88" y2="50" stroke-width="3" />
-            <line x1="50" y1="12" x2="50" y2="88" stroke-width="3" />
-            <path d="M 20 42 L 31 22 L 42 42 Z" stroke-width="3.5" stroke-linejoin="round" />
-            <circle cx="31" cy="30" r="2.5" fill="currentColor" stroke="none" />
-            <rect x="28.5" y="36" width="5" height="6" stroke-width="2.5" />
-            <path d="M 50 42 Q 59 34 61 24 Q 52 26 50 42 Z" stroke-width="3" fill="none" />
-            <path d="M 50 42 Q 41 34 39 24 Q 48 26 50 42 Z" stroke-width="3" fill="none" />
-            <path d="M 68 22 Q 78 26 74 34 Q 70 42 82 44" stroke-width="2.5" stroke-linecap="round" fill="none" />
-            <path d="M 72 16 A 14 14 0 0 1 84 28" stroke-width="2.5" stroke-linecap="round" fill="none" />
-            <path d="M 18 80 A 24 24 0 0 1 44 80" stroke-width="3" stroke-linecap="round" />
-            <path d="M 24 80 A 18 18 0 0 1 38 80" stroke-width="3" stroke-linecap="round" />
-            <path d="M 30 80 A 12 12 0 0 1 32 80" stroke-width="3" stroke-linecap="round" />
-            <path d="M 58 60 H 78 V 69 C 78 75 73 79 68 79 C 63 79 58 75 58 69 Z" stroke-width="3.5" stroke-linejoin="round" />
-            <path d="M 78 63 H 82 C 84.5 63 86 64.5 86 67 C 86 69.5 84.5 71 82 71 H 78" stroke-width="3" />
-            <line x1="62" y1="83" x2="74" y2="83" stroke-width="3" stroke-linecap="round" />
+            <path d="M 20 40 L 70 40 L 64 72 C 62 82, 40 84, 26 72 Z" stroke-width="4" stroke-linejoin="round" fill="none"/>
+            <path d="M 70 46 C 82 46, 84 62, 67 64" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <path d="M 14 84 L 76 84" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="78" cy="34" r="14" stroke-width="3.5" fill="none"/>
+            <path d="M 32 30 Q 36 22 32 14" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M 45 32 Q 49 24 45 16" stroke-width="3" stroke-linecap="round" fill="none"/>
           </svg>
-          <span>C<svg class="bean-o" viewBox="0 0 24 32"><path fill="currentColor" d="M12 2C5.5 2 2 8 2 16C2 24 5.5 30 12 30C18.5 30 22 24 22 16C22 8 18.5 2 12 2ZM12 6C15.2 11.2 9.2 16.2 14.2 22.2C16.2 24.2 13 26 12 26C11 26 7.8 22 9.8 17C11.8 12 8.8 8 12 6Z"/></svg>ffee <em>&amp;</em> Crisps</span>
+          <span>T <em>&amp;</em> Cookies</span>
         </div>
-        <p class="footer-tag">A warm, unhurried cafe &mdash; good coffee, honest food, no rush.</p>
+        <p class="footer-tag">A warm, cozy fictional tea leaf &amp; gourmet cookie cafe in Green Park, Hyderabad &mdash; good tea, honest baking, no rush.</p>
       </div>
       <div>
         <h5>Explore</h5>
@@ -844,44 +860,34 @@ footer a:hover{ color: var(--amber-light); }
       <div>
         <h5>Contact</h5>
         <ul>
-          <li><a href="tel:+917790044644">+91 77900 44644</a></li>
-          <li>Hyderabad, Telangana 500035</li>
+          <li><a href="tel:+919000012345">+91 90000 12345</a></li>
+          <li><a href="mailto:hello@tandcookies.example">hello@tandcookies.example</a></li>
+          <li>12, Lotus Avenue, Green Park</li>
+          <li>Hyderabad, Telangana 500081</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Coffee and Cookies. All rights reserved.</span>
-      <span>Crafted with ☕ for cozy coffee lovers</span>
+      <span>&copy; 2026 T &amp; Cookies. Fictional Demo Website. All rights reserved.</span>
+      <span>Crafted with 🫖 &amp; 🍪 for tea &amp; cookie lovers</span>
     </div>
   </div>
 </footer>
 
 <!-- ============================= CHATBOT ============================= -->
 <div class="chat-widget">
-  <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Chat with Coffee and Crisps Cafe">
+  <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Chat with T &amp; Cookies Cafe Assistant">
     <div class="chat-head">
       <svg class="cafe-grid-logo" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3.5">
-        <path d="M 12 12 L 64 12 C 78 12, 88 22, 88 36 L 88 88 L 36 88 C 22 88, 12 78, 12 64 Z" stroke-width="4" stroke-linejoin="round" />
-        <line x1="12" y1="50" x2="88" y2="50" stroke-width="3" />
-        <line x1="50" y1="12" x2="50" y2="88" stroke-width="3" />
-        <path d="M 20 42 L 31 22 L 42 42 Z" stroke-width="3.5" stroke-linejoin="round" />
-        <circle cx="31" cy="30" r="2.5" fill="currentColor" stroke="none" />
-        <rect x="28.5" y="36" width="5" height="6" stroke-width="2.5" />
-        <path d="M 50 42 Q 59 34 61 24 Q 52 26 50 42 Z" stroke-width="3" fill="none" />
-        <path d="M 50 42 Q 41 34 39 24 Q 48 26 50 42 Z" stroke-width="3" fill="none" />
-        <path d="M 68 22 Q 78 26 74 34 Q 70 42 82 44" stroke-width="2.5" stroke-linecap="round" fill="none" />
-        <path d="M 72 16 A 14 14 0 0 1 84 28" stroke-width="2.5" stroke-linecap="round" fill="none" />
-        <path d="M 18 80 A 24 24 0 0 1 44 80" stroke-width="3" stroke-linecap="round" />
-        <path d="M 24 80 A 18 18 0 0 1 38 80" stroke-width="3" stroke-linecap="round" />
-        <path d="M 30 80 A 12 12 0 0 1 32 80" stroke-width="3" stroke-linecap="round" />
-        <path d="M 58 60 H 78 V 69 C 78 75 73 79 68 79 C 63 79 58 75 58 69 Z" stroke-width="3.5" stroke-linejoin="round" />
-        <path d="M 78 63 H 82 C 84.5 63 86 64.5 86 67 C 86 69.5 84.5 71 82 71 H 78" stroke-width="3" />
-        <line x1="62" y1="83" x2="74" y2="83" stroke-width="3" stroke-linecap="round" />
+        <path d="M 20 40 L 70 40 L 64 72 C 62 82, 40 84, 26 72 Z" stroke-width="4" stroke-linejoin="round" fill="none"/>
+        <path d="M 70 46 C 82 46, 84 62, 67 64" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M 14 84 L 76 84" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="78" cy="34" r="14" stroke-width="3.5" fill="none"/>
       </svg>
-      <div><b>Cafe Assistant</b><span>Usually replies in a moment</span></div>
+      <div><b>T &amp; Cookies Assistant</b><span>Usually replies in a moment</span></div>
     </div>
     <div class="chat-body" id="chatBody" aria-live="polite">
-      <div class="msg bot">Hi! 👋 I'm the Coffee and Cookies assistant. Ask me about our hours, menu, location or reservations.</div>
+      <div class="msg bot">Hi! 👋 I'm the T &amp; Cookies assistant. Ask me about our tea brews, gourmet cookies, hours, or demo location.</div>
     </div>
     <div class="chat-chips" id="chatChips">
       <button class="chip" data-q="hours">Hours</button>
@@ -931,13 +937,13 @@ footer a:hover{ color: var(--amber-light); }
   navScrim.addEventListener('click', closeMobileNav);
   navMobile.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMobileNav); });
 
-  /* ---------------- COFFEE BEAN SHOWER ---------------- */
+  /* ---------------- TEA LEAF & COOKIE SHOWER ---------------- */
   var petalLayer = document.getElementById('petalLayer');
-  var beanPaths = [
-    'M50 4 C24 4 8 24 8 50 C8 76 24 96 50 96 C76 96 92 76 92 50 C92 24 76 4 50 4 Z M50 16 C58 32 40 48 55 68 C60 76 50 84 50 84 C50 84 40 72 45 52 C52 34 42 24 50 16 Z',
-    'M50 8 C28 8 12 26 12 50 C12 74 28 92 50 92 C72 92 88 74 88 50 C88 26 72 8 50 8 Z M50 18 C56 30 42 46 54 64 C60 72 50 80 50 80 C50 80 40 68 46 50 C52 34 44 24 50 18 Z'
+  var leafPaths = [
+    'M50 4 C70 20 80 50 60 85 C45 95 25 85 20 70 C10 50 25 20 50 4 Z M50 14 C45 35 35 55 45 75 C47 70 55 50 50 14 Z',
+    'M50 10 A40 40 0 1 1 49.9 10 Z'
   ];
-  var beanColors = ['#2A160E', '#3D2115', '#482B1D', '#5C3421', '#72432B', '#23120B'];
+  var leafColors = ['#D9822B', '#B3641B', '#8B5A2B', '#6B7A5E', '#2A160E', '#482B1D'];
   var maxPetals = reduceMotion ? 5 : 16;
   var activePetals = 0;
 
@@ -951,8 +957,8 @@ footer a:hover{ color: var(--amber-light); }
     var duration = reduceMotion ? 0 : 9 + Math.random() * 7;
     var drift = (Math.random() * 160 - 80) + 'px';
     var spin = Math.round(200 + Math.random() * 260) + 'deg';
-    var path = beanPaths[Math.floor(Math.random() * beanPaths.length)];
-    var color = beanColors[Math.floor(Math.random() * beanColors.length)];
+    var path = leafPaths[Math.floor(Math.random() * leafPaths.length)];
+    var color = leafColors[Math.floor(Math.random() * leafColors.length)];
 
     el.style.left = startX + 'vw';
     el.style.width = size + 'px';
@@ -976,7 +982,7 @@ footer a:hover{ color: var(--amber-light); }
     spawnPetal();
   }, spawnInterval);
 
-  /* ---------------- COFFEE BEAN CURSOR ---------------- */
+  /* ---------------- TEA LEAF CURSOR ---------------- */
   if (isFinePointer && !reduceMotion) {
     document.body.classList.add('has-flower-cursor');
     var cursor = document.getElementById('flowerCursor');
@@ -1008,8 +1014,8 @@ footer a:hover{ color: var(--amber-light); }
       s.className = 'petal-spark';
       s.style.left = x + 'px';
       s.style.top = y + 'px';
-      var color = beanColors[Math.floor(Math.random() * beanColors.length)];
-      s.innerHTML = '<svg viewBox="0 0 100 100"><path d="M50 4 C24 4 8 24 8 50 C8 76 24 96 50 96 C76 96 92 76 92 50 C92 24 76 4 50 4 Z M50 16 C58 32 40 48 55 68 C60 76 50 84 50 84 C50 84 40 72 45 52 C52 34 42 24 50 16 Z" fill="'+color+'"/></svg>';
+      var color = leafColors[Math.floor(Math.random() * leafColors.length)];
+      s.innerHTML = '<svg viewBox="0 0 100 100"><path d="M50 4 C70 20 80 50 60 85 C45 95 25 85 20 70 C10 50 25 20 50 4 Z" fill="'+color+'"/></svg>';
       document.body.appendChild(s);
       setTimeout(function(){ s.remove(); }, 800);
     }
@@ -1031,17 +1037,18 @@ footer a:hover{ color: var(--amber-light); }
   });
 
   var intents = [
-    { kw:['hour','time','open','close','timing'], a:"We're open every day, 11:00 AM to 10:45 PM \u2014 no weekly off." },
-    { kw:['menu','food','eat','dish','item','pasta','pizza','dessert','brownie','kunafa'], a:"Guest favourites: Loaded Cheese Fries, Peri-Peri Chicken Crumbs, wood-fired Pizza & Pasta, and the Sizzling Chocolate Brownie. Full menu is on this page and in-cafe." },
-    { kw:['reserve','reservation','book','table'], a:"For reservations, the fastest way is to call us at +91 77998 44644 \u2014 we'll hold a table for you." },
-    { kw:['park','valet'], a:"Yes, we offer valet parking so you can skip the hassle." },
-    { kw:['price','cost','expensive','cheap'], a:"Prices are fair for the portions \u2014 exact pricing is on the menu in-cafe. Ask your server for today's specials." },
-    { kw:['contact','phone','number','call'], a:"You can reach us directly at +91 77998 44644." },
-    { kw:['rating','review','good','recommend'], a:"We're rated 4.5\u2605 from over 1,300 Google reviews \u2014 guests especially love the desserts and the relaxed vibe." },
-    { kw:['hi','hello','hey'], a:"Hey there! ☕ Ask me about our hours, menu, location or how to reserve a table." },
-    { kw:['thank'], a:"Anytime! See you at Coffee and Cookies soon ☕" }
+    { kw:['hour','time','open','close','timing'], a:"We're open every day, 10:00 AM to 11:00 PM \u2014 no weekly off." },
+    { kw:['menu','tea','cookie','food','eat','dish','item','tart','shortbread','chai'], a:"Guest favourites: Imperial Jasmine Pearls, Masala Chai Supreme, Choco-Chip Sea Salt Cookies, and Pistachio Rose Shortbread. Full menu is on this page!" },
+    { kw:['locat','address','where','direction','map'], a:"Fictional location: 12, Lotus Avenue, Green Park, Hyderabad, Telangana 500081, India." },
+    { kw:['reserve','reservation','book','table'], a:"For demo reservations, reach out at +91 90000 12345 or email hello@tandcookies.example." },
+    { kw:['park','valet'], a:"Yes, we offer complimentary valet parking at our Lotus Avenue entrance." },
+    { kw:['price','cost','expensive','cheap'], a:"Prices are moderate and friendly \u2014 exact pricing is listed on our menu board." },
+    { kw:['contact','phone','number','call','email'], a:"You can reach us at +91 90000 12345 or email hello@tandcookies.example." },
+    { kw:['rating','review','good','recommend'], a:"We're rated 4.9\u2605 in our portfolio demonstration \u2014 guests especially love our fresh cookies and serene atmosphere." },
+    { kw:['hi','hello','hey'], a:"Hey there! 🫖 Ask me about our leaf teas, gourmet cookies, hours, location, or reservations." },
+    { kw:['thank'], a:"Anytime! See you at T & Cookies soon 🫖🍪" }
   ];
-  var fallback = "I don't have that detail handy \u2014 the best way to find out is to call us at +91 77998 44644.";
+  var fallback = "I don't have that detail handy \u2014 feel free to call us at +91 90000 12345 or email hello@tandcookies.example.";
 
   function matchIntent(text){
     text = text.toLowerCase();
